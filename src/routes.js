@@ -19,8 +19,15 @@ import TravelReq from './views/TravelReq'
 import TravelInbox from './views/TravelInbox'
 import UseCar from './views/UseCar'
 import Allowances from './views/Allowances'
+
+
+import ITservicereq from './views/ITservicereq'
+
+
 // core components/views for RTL layout
 import RTLPage from "views/RTLPage/RTLPage.jsx";
+import Reqboard from "./views/Reqboard";
+import Adminreq from "./views/Adminreq";
 
 const dashboardRoutes = [
   {
@@ -61,6 +68,30 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: LibraryBooks,
     component: Allowances,
+    layout: "/admin"
+  },
+  {
+    path: "/ITservicereq",
+    name: "IT Service Request",
+    rtlName: "لوحة القيادة",
+    icon: LibraryBooks,
+    component: ITservicereq,
+    layout: "/admin"
+  },
+  {
+    path: "/Reqboard",
+    name: "IT Service Request",
+    rtlName: "لوحة القيادة",
+    icon: LibraryBooks,
+    component: Reqboard,
+    layout: "/admin"
+  },
+  {
+    path: "/Adminreq",
+    name: "Administration",
+    rtlName: "لوحة القيادة",
+    icon: LibraryBooks,
+    component: Adminreq,
     layout: "/admin"
   },
   {

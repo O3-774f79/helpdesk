@@ -4,15 +4,10 @@ import { withStyles } from '@material-ui/core/styles';
 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-
-import GridItem from "components/Grid/GridItem.jsx";
-import GridContainer from "components/Grid/GridContainer.jsx";
 import Divider from '@material-ui/core/Divider';
-
-import Topmenu from './Topmenu';
-import Tasklist from './Tasklist';
-import Review from './Review';
 import Manageboard from './Manageboard';
+
+
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
@@ -40,20 +35,9 @@ class Reqboard extends React.Component {
 
   return (
     <div>
-       <Paper className={classes.paper}>
-        <Grid xs={12}>
-        
-       <Topmenu />
-       </Grid>
-       <Grid xs={12}>
-      
-       <Divider className={classes.divider} />
-    <Manageboard />
-    
-    </Grid>
-    </Paper>
-
-    <Review />
+        <Paper>
+      <Manageboard />   
+      </Paper>
     </div>
   );
 }

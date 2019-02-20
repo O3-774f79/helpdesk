@@ -61,7 +61,7 @@ const styles = {
     marginTop: 30
   },
   headerAppBar:{
-    backgroundColor: "rgb(51, 204, 51)",
+    backgroundColor: "rgb(187, 255, 153)",
     color: "rgb(0, 0, 0)"
   },
   buttonSubmit: {
@@ -101,7 +101,10 @@ class ITformReq extends React.Component {
 
   
   state = {
-    age: '',}
+    age: '',
+    type:'',
+    business:'',
+    classicfication:''}
 
   handleChange = name => event => {
     this.setState({ [name]: event.target.value });
@@ -140,20 +143,22 @@ class ITformReq extends React.Component {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={3}>
           <FormControl required className={classes.formControl}>
-          <InputLabel htmlFor="age-native-required">Organization wide:</InputLabel>
+          <InputLabel htmlFor="business-native-required">Organization wide:</InputLabel>
           <Select
             native
-            value={this.state.age}
-            onChange={this.handleChange('age')}
-            name="age"
+            value={this.state.business}
+            onChange={this.handleChange('business')}
+            name="business"
             inputProps={{
-              id: 'age-native-required',
+              id: 'business-native-required',
             }}
           >
             <option value="" />
-            <option value={10}>Ten</option>
-            <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+            <option value='Accounting'>Accounting</option>
+            <option value='HR'>HR</option>
+            <option value='IT'>IT</option>
+            <option value='Reception'>Reception</option>
+            <option value='Marketing'>Marketing</option>
           </Select>
           <FormHelperText>Required</FormHelperText>
         </FormControl>
@@ -167,20 +172,20 @@ class ITformReq extends React.Component {
                 
 
 <FormControl required className={classes.formControl}>
-          <InputLabel htmlFor="age-native-required">Classicfication:</InputLabel>
+          <InputLabel htmlFor="classicfication-native-required">Classicfication</InputLabel>
           <Select
             native
-            value={this.state.age}
-            onChange={this.handleChange('age')}
-            name="age"
+            value={this.state.classicfication}
+            onChange={this.handleChange('classicfication')}
+            name="classicfication"
             inputProps={{
-              id: 'age-native-required',
+              id: 'classicfication-native-required',
             }}
           >
             <option value="" />
-            <option value={10}>Ten</option>
-            <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+            <option value="Network">Network</option>
+            <option value="Software">Software</option>
+            <option value="Hardware">Hardware</option>
           </Select>
           <FormHelperText>Required</FormHelperText>
         </FormControl>
@@ -209,6 +214,37 @@ class ITformReq extends React.Component {
                     />
                 </GridItem>
                 
+                <GridItem xs={12} sm={12} md={2}>
+                <h7 className={classes.label}>Type</h7>
+                </GridItem>
+                <GridItem xs={12} sm={12} md={3}>
+                
+
+                <FormControl required className={classes.formControl}>
+          <InputLabel htmlFor="type-native-required">Type</InputLabel>
+          <Select
+            native
+            value={this.state.type}
+            onChange={this.handleChange('type')}
+            name="type"
+            inputProps={{
+              id: 'type-native-required',
+            }}
+          >
+            <option value="" />
+            <option value="Minor">Minor</option>
+            <option value="Major">Major</option>
+            <option value="Emergency">Emergency</option>
+          </Select>
+          <FormHelperText>Required</FormHelperText>
+        </FormControl>
+
+
+
+
+                </GridItem>
+
+
               </GridContainer>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={2}>
@@ -314,7 +350,7 @@ class ITformReq extends React.Component {
                 <GridItem xs={12} sm={12} md={4}>
                 <TextField
           id="outlined-multiline-static"
-          label="Description"
+          label="Comment"
           multiline
           rows="4"
           className={classes.Comment}

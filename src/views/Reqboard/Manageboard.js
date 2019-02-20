@@ -17,6 +17,8 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 import Description from "@material-ui/icons/Description";
+import Build from "@material-ui/icons/Build";
+import Delete from "@material-ui/icons/Delete";
 
 const styles = theme => ({
     button: {
@@ -40,7 +42,7 @@ const styles = theme => ({
 function onChange(pagination, filters, sorter) {
     console.log('params', pagination, filters, sorter);
   }
-class Tasklist extends React.Component {
+class Manageboard extends React.Component {
     state={
         columns:[{
              title: 'Folio',
@@ -105,10 +107,36 @@ class Tasklist extends React.Component {
             sortDirections: ['descend', 'ascend'],
           },
           {
+            title: 'Worker',
+            dataIndex: 'Worker',
+            filters:[{
+                text:'Worker1',
+                value:'Worker1',
+            },
+            {
+                text:'Worker2',
+                value:'Worker2',
+            },
+            {
+                text:'Worker3',
+                value:'Worker3',
+            },
+            {
+                text:'Worker4',
+                value:'Worker4',
+            },],
+            onFilter: (value, record) => record.Worker.indexOf(value) === 0,
+            sorter: (a, b) => a.Worker.length - b.Worker.length,
+            sortDirections: ['descend', 'ascend'],
+          },
+          {
             title: 'Viewflow',
             dataIndex: 'Viewflow',
-            render: () => (<Button>
-              <Description/> </Button> ),
+            render: () => (
+            [<Button><Description/> </Button>],
+                [<Button><Build/> </Button>],
+                [<Button><Delete/> </Button>]
+            ),
             
           },],
            
@@ -119,6 +147,7 @@ class Tasklist extends React.Component {
              Activity: 'Request process',
              TaskStart: '11:11',
              TaskEnd: '-',
+             Worker:'Worker1',
             
            }, {
              key: '2',
@@ -127,7 +156,8 @@ class Tasklist extends React.Component {
              Activity: 'Complete - Accepted',
              TaskStart: '11:38',
              TaskEnd: '12:00',
-             Viewflow:'Open',
+             Worker:'Worker2',
+             
            }, {
              key: '3',
              Folio: 'ITSR-2002',
@@ -135,7 +165,8 @@ class Tasklist extends React.Component {
              Activity: 'Open - Request process',
              TaskStart: '12:12',
              TaskEnd: '-',
-             Viewflow:'Open',
+             Worker:'Worker3',
+            
            }, {
              key: '4',
              Folio: 'ITSR-2003',
@@ -143,7 +174,8 @@ class Tasklist extends React.Component {
              Activity: 'Open - Request process',
              TaskStart: '14:42',
              TaskEnd: '-',
-             Viewflow:'Open',
+             Worker:'Worker4',
+             
            }]
      }
     render(){
@@ -168,8 +200,8 @@ class Tasklist extends React.Component {
 }
 }
 
-Tasklist.propTypes = {
+Manageboard.propTypes = {
     classes: PropTypes.object.isRequired,
   };
   
-  export default withStyles(styles)(Tasklist);
+  export default withStyles(styles)(Manageboard);

@@ -1,5 +1,4 @@
 import React from 'react';
-import { createBrowserHistory } from 'history';
 //import @material-ui
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -25,7 +24,7 @@ const styles = theme => ({
   },
 });
 
-class Topmenu extends React.Component {
+class Topmenu1 extends React.Component {
 
     render(){
     
@@ -53,8 +52,8 @@ class Topmenu extends React.Component {
   );
 }
 }
-Topmenu.propTypes = {
+Topmenu1.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Topmenu);
+export default withStyles(styles)(Topmenu1);

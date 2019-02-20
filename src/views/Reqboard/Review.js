@@ -91,7 +91,12 @@ class Review extends React.Component {
 
 
     state = {
-        age: '',}
+        age: '',
+        business: '',
+        classification: '',
+        type: '',
+        decision: '',
+      }
 
         
   handleChange = name => event => {
@@ -119,6 +124,7 @@ class Review extends React.Component {
                 <TextField
                     id="outlined-email-input"
                     label="ITSR-2500"
+                    disabled
                     className={classes.textField}
                     fullWidth
                     name="Ref"
@@ -131,6 +137,8 @@ class Review extends React.Component {
                 <GridItem xs={12} sm={12} md={3}>
                 <TextField
                     id="outlined-email-input"
+                    label="Review resolution"
+                    disabled
                     className={classes.textField}
                     name="Stage"
                     fullWidth
@@ -146,6 +154,8 @@ class Review extends React.Component {
                 <GridItem xs={12} sm={12} md={3}>
                 <TextField
                     id="outlined-email-input"
+                    label="HR01"
+                    disabled
                     className={classes.textField}
                     fullWidth
                     name="Createby"
@@ -158,6 +168,8 @@ class Review extends React.Component {
                 <GridItem xs={12} sm={12} md={3}>
                 <TextField
                     id="outlined-email-input"
+                    label="01/01/2019 12:12"
+                    disabled
                     className={classes.textField}
                     name="Startdate"
                     fullWidth
@@ -173,6 +185,8 @@ class Review extends React.Component {
                 <GridItem xs={12} sm={12} md={3}>
                 <TextField
                     id="outlined-email-input"
+                    label="Open"
+                    disabled
                     className={classes.textField}
                     name="State"
                     fullWidth
@@ -205,20 +219,22 @@ class Review extends React.Component {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={3}>
           <FormControl required className={classes.formControl}>
-          <InputLabel htmlFor="age-native-required">Organization wide:</InputLabel>
+          <InputLabel htmlFor="business-native-required">Organization wide:</InputLabel>
           <Select
             native
-            value={this.state.age}
-            onChange={this.handleChange('age')}
-            name="age"
+            value={this.state.business}
+            onChange={this.handleChange('business')}
+            name="business"
             inputProps={{
-              id: 'age-native-required',
+              id: 'business-native-required',
             }}
           >
-            <option value="" />
-            <option value={10}>Ten</option>
-            <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+           <option value="" />
+            <option value='Accounting'>Accounting</option>
+            <option value='HR'>HR</option>
+            <option value='IT'>IT</option>
+            <option value='Reception'>Reception</option>
+            <option value='Marketing'>Marketing</option>
           </Select>
           <FormHelperText>Required</FormHelperText>
         </FormControl>
@@ -232,20 +248,21 @@ class Review extends React.Component {
                 
 
 <FormControl required className={classes.formControl}>
-          <InputLabel htmlFor="age-native-required">Classicfication:</InputLabel>
+          <InputLabel htmlFor="classification-native-required">Classicfication:</InputLabel>
           <Select
             native
-            value={this.state.age}
-            onChange={this.handleChange('age')}
-            name="age"
+            value={this.state.classification}
+            onChange={this.handleChange('classification')}
+            name="classification"
             inputProps={{
-              id: 'age-native-required',
+              id: 'classification-native-required',
             }}
           >
-            <option value="" />
-            <option value={10}>Ten</option>
-            <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+           
+           <option value="" />
+            <option value="Network">Network</option>
+            <option value="Software">Software</option>
+            <option value="Hardware">Hardware</option>
           </Select>
           <FormHelperText>Required</FormHelperText>
         </FormControl>
@@ -274,6 +291,34 @@ class Review extends React.Component {
                     />
                 </GridItem>
                 
+                <GridItem xs={12} sm={12} md={2}>
+                <h7 className={classes.label}>Type</h7>
+                </GridItem>
+                <GridItem xs={12} sm={12} md={3}>
+                
+
+                <FormControl required className={classes.formControl}>
+          <InputLabel htmlFor="type-native-required">Type</InputLabel>
+          <Select
+            native
+            value={this.state.type}
+            onChange={this.handleChange('type')}
+            name="type"
+            inputProps={{
+              id: 'type-native-required',
+            }}
+          >
+            <option value="" />
+            <option value="Minor">Minor</option>
+            <option value="Major">Major</option>
+            <option value="Emergency">Emergency</option>
+          </Select>
+          <FormHelperText>Required</FormHelperText>
+        </FormControl>
+
+
+
+                </GridItem>
               </GridContainer>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={2}>
@@ -421,20 +466,20 @@ class Review extends React.Component {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={3}>
           <FormControl required className={classes.formControl}>
-          <InputLabel htmlFor="age-native-required">Organization wide:</InputLabel>
+          <InputLabel htmlFor="decision-native-required">Decision</InputLabel>
           <Select
             native
             value={this.state.age}
-            onChange={this.handleChange('age')}
-            name="age"
+            onChange={this.handleChange('decision')}
+            name="decision"
             inputProps={{   
-              id: 'age-native-required',
+              id: 'decision-native-required',
             }}
           >
             <option value="" />
-            <option value={10}>Ten</option>
-            <option value={20}>Twenty</option>
-            <option value={30}>Thirty</option>
+            <option value='Worker1'>Worker1</option>
+            <option value='Worker2'>Worker2</option>
+            <option value='Worker3'>Worker3</option>
           </Select>
           <FormHelperText>Required</FormHelperText>
         </FormControl>

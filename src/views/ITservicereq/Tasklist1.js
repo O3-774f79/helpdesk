@@ -32,7 +32,7 @@ const styles = theme => ({
       color: theme.palette.text.secondary,
     },
     headerAppBar:{
-        backgroundColor: "rgb(187, 255, 153)",
+        backgroundColor: "rgb(51, 204, 51)",
         color: "rgb(0, 0, 0)"
       },
   });
@@ -40,7 +40,7 @@ const styles = theme => ({
 function onChange(pagination, filters, sorter) {
     console.log('params', pagination, filters, sorter);
   }
-class Tasklist extends React.Component {
+class Tasklist1 extends React.Component {
     state={
         columns:[{
              title: 'Folio',
@@ -168,8 +168,8 @@ class Tasklist extends React.Component {
 }
 }
 
-Tasklist.propTypes = {
+Tasklist1.propTypes = {
     classes: PropTypes.object.isRequired,
   };
   
-  export default withStyles(styles)(Tasklist);
+  export default withStyles(styles)(Tasklist1);

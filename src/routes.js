@@ -30,6 +30,7 @@ import Reqboard from "./views/Reqboard";
 import Adminreq from "./views/Adminreq";
 
 const dashboardRoutes = [
+  
   {
     path: "/dashboard",
     name: "Dashboard",
@@ -150,6 +151,7 @@ const dashboardRoutes = [
     component: RTLPage,
     layout: "/rtl"
   }
+  
 ];
 
 export default dashboardRoutes;

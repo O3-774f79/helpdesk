@@ -1,5 +1,5 @@
 import React from 'react';
-// import { createBrowserHistory } from 'history';
+import { createBrowserHistory } from 'history';
 //import @material-ui
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -8,7 +8,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 import Build from "@material-ui/icons/Build";
-// import Equalizer from "@material-ui/icons/Equalizer";
+import Equalizer from "@material-ui/icons/Equalizer";
 import Settings from "@material-ui/icons/Settings";
 const styles = theme => ({
   button: {
@@ -25,7 +25,7 @@ const styles = theme => ({
   },
 });
 
-class Topmenu extends React.Component {
+class topmenuadmin extends React.Component {
 
     render(){
     
@@ -36,13 +36,13 @@ class Topmenu extends React.Component {
         <Grid container spacing={24}>
         <Grid item xs>
         <Paper className={classes.paper}>
-      <Button className={classes.button} fullWidth="true"><Build />Administration</Button>
+      <Button className={classes.button} fullWidth="true"><Build />Business Unit, Classification/Engineers</Button>
       </Paper>
       </Grid>
       
       <Grid item xs>
       <Paper className={classes.paper}>
-      <Button className={classes.button} fullWidth="true"><Settings />Start new IT service request
+      <Button className={classes.button} fullWidth="true"><Settings />Application Administrator
       </Button>
       </Paper>
       </Grid>
@@ -53,8 +53,8 @@ class Topmenu extends React.Component {
   );
 }
 }
-Topmenu.propTypes = {
+topmenuadmin.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Topmenu);
+export default withStyles(styles)(topmenuadmin);

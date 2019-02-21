@@ -10,7 +10,7 @@ import ITservicereq from './views/ITservicereq'
 import Reqboard from "./views/Reqboard";
 import Review from "./views/Reqboard/Review";
 import ITformReq1 from "./views/ITservicereq/ITformReq1";
-import admintable from "./views/Reqboard/admintable";
+// import admintable from "./views/Reqboard/admintable";
 
 
 
@@ -55,14 +55,14 @@ const dashboardRoutes = [
     component: Review,
     layout: "/admin"
   },
-  {
-    path: "/admintable",
-    name: "Admin table",
-    rtlName: "لوحة القيادة",
-    icon: LibraryBooks,
-    component: admintable,
-    layout: "/admin"
-  },
+  // {
+  //   path: "/admintable",
+  //   name: "Admin table",
+  //   rtlName: "لوحة القيادة",
+  //   icon: LibraryBooks,
+  //   component: admintable,
+  //   layout: "/admin"
+  // },
   
 ];
 

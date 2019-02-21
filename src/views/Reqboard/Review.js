@@ -27,16 +27,16 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import InputBase from '@material-ui/core/InputBase';
+// import InputBase from '@material-ui/core/InputBase';
 
-import PersonPinIcon from "@material-ui/icons/PersonPin";
+// import PersonPinIcon from "@material-ui/icons/PersonPin";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import Dashboard from "@material-ui/icons/Dashboard";
 
 
 import Inbox from "@material-ui/icons/Inbox";
 import Comment from "@material-ui/icons/Comment";
-import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+// import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 
 
 const Step = Steps.Step;
@@ -68,7 +68,7 @@ const styles = {
     marginTop: 30
   },
   headerAppBar:{
-    backgroundColor: "rgb(132, 225, 132)",
+    backgroundColor: "rgb(0, 230, 0)",
     color: "rgb(0, 0, 0)"
   },
   buttonSubmit: {

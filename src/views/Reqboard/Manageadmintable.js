@@ -1,7 +1,8 @@
 import React, {PureComponent} from 'react'
 
 import 'antd/dist/antd.css';
-import {  Table, Button, } from 'antd';
+import {  Table,  Button, } from 'antd';
+
 
 // //import @material-ui
 // import PropTypes from 'prop-types';
@@ -17,21 +18,25 @@ function onChange(pagination, filters, sorter) {
   }
 
 
-export default class Classtable extends PureComponent{
+export default class Manageadmintable extends PureComponent{
 
     state={
         columns:[{
-            title: 'Title',
-            dataIndex: 'Title',
-            width:'35%',
+            title: 'Display Name',
+            dataIndex: 'Displayname',
+            width:'25%',
            
             }, 
             {
-            title: 'Description',
-            dataIndex: 'Description',
-            width:'35%',
-                
+            title: 'Unique Name',
+            dataIndex: 'Uniquename',
+            width:'25%',
             },
+            {
+              title: 'Description',
+              dataIndex: 'Description',
+              width:'25%',
+              },
             {
                 title:'Operation',
                 dataIndex:'Operation',
@@ -44,17 +49,15 @@ export default class Classtable extends PureComponent{
           
           data:[{
             key: '1',
-            Title: 'Network',
-            Description: 'Network problem',
+            Displayname: 'Xiao sin',
+            Uniquename: 'Administrator',
+            Description:'Manage Create/Delete/Edit',
           }, {
             key: '2',
-            Title: 'Hardware',
-            Description: 'Hardware problem',
-          }, {
-            key: '3',
-            Title: 'Software',
-            Description: 'Software problem',
-          }, ]
+            Displayname: 'Jack sun',
+            Uniquename: 'Administrator',
+            Description:'Sub Admin',
+          },]
     }
     render(){
         return(

@@ -5,9 +5,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-
-import Build from "@material-ui/icons/Build";
-import Equalizer from "@material-ui/icons/Equalizer";
 import Settings from "@material-ui/icons/Settings";
 const styles = theme => ({
   button: {
@@ -32,22 +29,25 @@ class Topmenu1 extends React.Component {
 
   return (
     <div>
-        <Grid container spacing={24}>
-        {/* <Grid item xs>
+        
+      <Grid container spacing={24}>
+        <Grid item xs>
         <Paper className={classes.paper}>
-      <Button className={classes.button} fullWidth="true"><Build />Administration</Button>
+      <Button className={classes.button} fullWidth="true"><Settings />Start new IT service request</Button>
       </Paper>
-      </Grid> */}
+      </Grid>
       
       <Grid item xs>
-      <Paper className={classes.paper}>
+      {/* <Paper className={classes.paper}>
       <Button className={classes.button} fullWidth="true"><Settings />Start new IT service request
       </Button>
-      </Paper>
+      </Paper> */}
       </Grid>
-      </Grid>
-      
+      </Grid>  
     
+
+
+
     </div>
   );
 }

@@ -5,12 +5,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
-import GridItem from "components/Grid/GridItem.jsx";
-import GridContainer from "components/Grid/GridContainer.jsx";
 import Divider from '@material-ui/core/Divider';
 
 import Topmenu from './Topmenu';
-import Review from './Review';
 import Manageboard from './Manageboard';
 const styles = theme => ({
   button: {

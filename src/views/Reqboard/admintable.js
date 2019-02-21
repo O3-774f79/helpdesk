@@ -9,9 +9,9 @@ import GridItem from "components/Grid/GridItem.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import Divider from '@material-ui/core/Divider';
 
-import Topmenu from './Topmenu';
-import Review from './Review';
-import Manageboard from './Manageboard';
+import BUtable from './BUtable';
+import Classtable from './Classtable';
+import Engineertable from './Engineertable';
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
@@ -31,7 +31,7 @@ const styles = theme => ({
   
 });
 
-class Reqboard extends React.Component {
+class admintable extends React.Component {
 
     render(){
     
@@ -41,24 +41,24 @@ class Reqboard extends React.Component {
     <div>
        <Paper className={classes.paper}>
         <Grid xs={12}>
-        
-       <Topmenu />
+        <BUtable />
        </Grid>
+       
+       {/* <Divider className={classes.divider} /> */}
        <Grid xs={12}>
-      
-       <Divider className={classes.divider} />
-    <Manageboard />
-    
-    </Grid>
+        <Classtable />
+       </Grid>
+       {/* <Divider className={classes.divider} /> */}
+       <Grid xs={12}>
+        <Engineertable />
+       </Grid>
     </Paper>
-
-    {/* <Review /> */}
     </div>
   );
 }
 }
-Reqboard.propTypes = {
+admintable.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Reqboard);
+export default withStyles(styles)(admintable);

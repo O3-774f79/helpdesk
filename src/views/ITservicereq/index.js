@@ -10,7 +10,7 @@ import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Topmenu1 from "./Topmenu1";
 import Tasklist1 from "./Tasklist1";
-import ITformReq from "./ITformReq";
+import ITformReq1 from "./ITformReq1";
 
 const styles = theme => ({
      button: {
@@ -54,7 +54,7 @@ class index extends PureComponent {
                     
                     </Grid>
                     </Paper>
-                    <ITformReq />
+                    {/* <ITformReq1 /> */}
                </div>
           )
      }

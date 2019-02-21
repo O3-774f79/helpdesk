@@ -33,11 +33,11 @@ class Topmenu1 extends React.Component {
   return (
     <div>
         <Grid container spacing={24}>
-        <Grid item xs>
+        {/* <Grid item xs>
         <Paper className={classes.paper}>
       <Button className={classes.button} fullWidth="true"><Build />Administration</Button>
       </Paper>
-      </Grid>
+      </Grid> */}
       
       <Grid item xs>
       <Paper className={classes.paper}>

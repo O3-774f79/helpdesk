@@ -8,6 +8,7 @@ import Admin from "layouts/Admin.jsx";
 import RTL from "layouts/RTL.jsx";
 
 import "assets/css/material-dashboard-react.css?v=1.6.0";
+import ITformReq from "./views/ITservicereq/ITformReq1";
 
 const hist = createBrowserHistory();
 
@@ -16,7 +17,7 @@ ReactDOM.render(
     <Switch>
       <Route path="/admin" component={Admin} />
       <Route path="/rtl" component={RTL} />
-      <Redirect from="/" to="/admin/dashboard" />
+       <Redirect from="/" to="/admin/ITservicereq" /> 
     </Switch>
   </Router>,
   document.getElementById("root")

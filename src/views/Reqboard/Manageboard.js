@@ -19,6 +19,7 @@ import Grid from '@material-ui/core/Grid';
 import Description from "@material-ui/icons/Description";
 import Build from "@material-ui/icons/Build";
 import Delete from "@material-ui/icons/Delete";
+import { Link } from '@material-ui/core';
 
 const styles = theme => ({
     button: {
@@ -34,7 +35,7 @@ const styles = theme => ({
       color: theme.palette.text.secondary,
     },
     headerAppBar:{
-        backgroundColor: "rgb(187, 255, 153)",
+        backgroundColor: "rgb(132, 225, 132)",
         color: "rgb(0, 0, 0)"
       },
   });
@@ -93,49 +94,63 @@ class Manageboard extends React.Component {
              sorter: (a, b) => a.Activity.length - b.Activity.length,
              sortDirections: ['descend','ascend']
            }, {
-             title: 'TaskStart',
-             dataIndex: 'TaskStart',
+             title: 'Datestart',
+             dataIndex: 'Datestart',
              
-             sorter: (a, b) => a.TaskStart.length - b.TaskStart.length,
+             sorter: (a, b) => a.Datestart.length - b.Datestart.length,
              sortDirections: ['descend', 'ascend'],
            },
            {
-            title: 'TaskEnd',
-            dataIndex: 'TaskEnd',
+            title: 'Timestart',
+            dataIndex: 'Timestart',
             
-            sorter: (a, b) => a.TaskEnd.length - b.TaskEnd.length,
+            sorter: (a, b) => a.Timestart.length - b.Timestart.length,
+            sortDirections: ['descend', 'ascend'],
+          },
+           {
+            title: 'Dateend',
+            dataIndex: 'Dateend',
+            
+            sorter: (a, b) => a.Dateend.length - b.Dateend.length,
             sortDirections: ['descend', 'ascend'],
           },
           {
-            title: 'Worker',
-            dataIndex: 'Worker',
+            title: 'Timeend',
+            dataIndex: 'Timeend',
+            
+            sorter: (a, b) => a.Timeend.length - b.Timeend.length,
+            sortDirections: ['descend', 'ascend'],
+          },
+          {
+            title: 'Engineer',
+            dataIndex: 'Engineer',
             filters:[{
-                text:'Worker1',
-                value:'Worker1',
+                text:'Engineer1',
+                value:'Engineer1',
             },
             {
-                text:'Worker2',
-                value:'Worker2',
+                text:'Engineer2',
+                value:'Engineer2',
             },
             {
-                text:'Worker3',
-                value:'Worker3',
+                text:'Engineer3',
+                value:'Engineer3',
             },
             {
-                text:'Worker4',
-                value:'Worker4',
+                text:'Engineer4',
+                value:'Engineer4',
             },],
-            onFilter: (value, record) => record.Worker.indexOf(value) === 0,
-            sorter: (a, b) => a.Worker.length - b.Worker.length,
+            onFilter: (value, record) => record.Engineer.indexOf(value) === 0,
+            sorter: (a, b) => a.Engineer.length - b.Engineer.length,
             sortDirections: ['descend', 'ascend'],
           },
           {
             title: 'Viewflow',
             dataIndex: 'Viewflow',
             render: () => (
-            [<Button><Description/> </Button>],
-                [<Button><Build/> </Button>],
-                [<Button><Delete/> </Button>]
+            [<Button><Description/> </Button>,
+                <Button><Build/> </Button>,
+                <Button><Delete/> </Button>]
             ),
             
           },],
@@ -145,36 +160,44 @@ class Manageboard extends React.Component {
              Folio: 'ITSR-2000',
              Title:'E-mail service down',
              Activity: 'Request process',
-             TaskStart: '11:11',
-             TaskEnd: '-',
-             Worker:'Worker1',
+             Datestart: '25/12/2018',
+             Timestart:'10:43',
+             Dateend: '-',
+             Timeend:'-',
+             Engineer:'Engineer1',
             
            }, {
              key: '2',
              Folio: 'ITSR-2001',
              Title:'Internet not access',
-             Activity: 'Complete - Accepted',
-             TaskStart: '11:38',
-             TaskEnd: '12:00',
-             Worker:'Worker2',
+             Activity: 'Open - Request process',
+             Datestart: '26/12/2018',
+             Timestart:'14:03',
+             Dateend: '-',
+             Timeend:'',
+             Engineer:'Engineer2',
              
            }, {
              key: '3',
              Folio: 'ITSR-2002',
              Title:'Password lock',
-             Activity: 'Open - Request process',
-             TaskStart: '12:12',
-             TaskEnd: '-',
-             Worker:'Worker3',
+             Activity: 'Complete - Accepted',
+             Datestart: '29/12/2018',
+             Timestart:'12:12',
+             Dateend: '29/12/2018',
+             Timeend:'13:32',
+             Engineer:'Engineer3',
             
            }, {
              key: '4',
              Folio: 'ITSR-2003',
              Title:'Blue screen',
              Activity: 'Open - Request process',
-             TaskStart: '14:42',
-             TaskEnd: '-',
-             Worker:'Worker4',
+             Datestart: '5/01/2019',
+             Timestart:'9:21',
+             Dateend: '-',
+             Timeend:'-',
+             Engineer:'Engineer4',
              
            }]
      }
@@ -193,7 +216,12 @@ class Manageboard extends React.Component {
                     </Typography>
                     </Toolbar>
                 </AppBar>
-         <Table columns={this.state.columns} dataSource={this.state.data} onChange={onChange} pagination={false}/>
+         <Table 
+        //  title={() => 'My Task List'}
+         columns={this.state.columns} 
+         dataSource={this.state.data} 
+         onChange={onChange} 
+         pagination={false}/>
 
     </div>
   );

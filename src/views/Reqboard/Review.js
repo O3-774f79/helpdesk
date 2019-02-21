@@ -1,7 +1,7 @@
 import React from "react";
 // import antd component
 import 'antd/dist/antd.css';
-import { Upload, Icon } from 'antd';
+import { Upload, Icon, Steps } from 'antd';
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -39,6 +39,8 @@ import Comment from "@material-ui/icons/Comment";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 
 
+const Step = Steps.Step;
+
 const props = {
     action: '//jsonplaceholder.typicode.com/posts/',
     listType: 'picture',
@@ -46,14 +48,14 @@ const props = {
 
 const styles = {
   cardCategoryWhite: {
-    color: "rgba(255,255,255,.62)",
+    color: "rgba(255,255,255)",
     margin: "0",
     fontSize: "14px",
     marginTop: "0",
     marginBottom: "0"
   },
   cardTitleWhite: {
-    color: "#FFFFFF",
+    color: "#000000",
     marginTop: "0px",
     minHeight: "auto",
     fontWeight: "300",
@@ -66,7 +68,7 @@ const styles = {
     marginTop: 30
   },
   headerAppBar:{
-    backgroundColor: "rgb(255, 230, 204)",
+    backgroundColor: "rgb(132, 225, 132)",
     color: "rgb(0, 0, 0)"
   },
   buttonSubmit: {
@@ -83,6 +85,7 @@ const styles = {
   Comment: {
     minWidth:600,
   },
+
 };
 
 
@@ -95,7 +98,8 @@ class Review extends React.Component {
         business: '',
         classification: '',
         type: '',
-        decision: '',
+        Worker: '',
+        active: '',
       }
 
         
@@ -107,15 +111,30 @@ class Review extends React.Component {
     const { classes } = this.props;
   return (
     <div>
-      <GridContainer>
-        <GridItem xs={12} sm={12} md={12}>
-          <Card>
-            <CardHeader color="primary">
-              <h3 className={classes.cardTitleWhite}><Dashboard /> IT Service Request</h3>
+      <Card>
+            <CardHeader className={classes.cardCategoryWhite}>
+              {/* <h3 className={classes.cardTitleWhite}><Dashboard /> IT Service Request</h3> */}
               {/* <p className={classes.cardCategoryWhite}>Complete your profile</p> */}
+               <AppBar className={classes.headerAppBar} position="static">
+                    <Toolbar variant="dense">
+                    <Typography variant="h6" color="inherit">
+                  
+                    <Dashboard /> IT Service Request 
+                    </Typography>
+                    </Toolbar>
+                </AppBar>
             </CardHeader>
+            
 {/*First box*/}            
             <CardBody>
+            <Steps>
+            <Step status="finish" title="Request process" icon={<Icon type="user" />} />
+            <Step status="finish" title="Open" icon={<Icon type="solution" />} />
+            <Step status="process" title="Process" icon={<Icon type="tool" />} />
+            <Step status="wait" title="Complete - Accepted" icon={<Icon type="smile-o" />} />
+            </Steps>
+
+
                 <GridContainer>
                 <GridItem xs={12} sm={12} md={2}>
                 <h7 className={classes.label}>Reference</h7>
@@ -178,7 +197,7 @@ class Review extends React.Component {
                 </GridItem>
                
               </GridContainer>
-              <GridContainer>
+              {/* <GridContainer>
               <GridItem xs={12} sm={12} md={2}>
                 <h7 className={classes.label}>State</h7>
                 </GridItem>
@@ -193,8 +212,9 @@ class Review extends React.Component {
                     margin="normal"
                     />
                 </GridItem>
-                </GridContainer>
+                </GridContainer> */}
                 </CardBody>
+                </Card>
 {/*Second box*/}        
            
       <GridContainer>
@@ -281,11 +301,11 @@ class Review extends React.Component {
                 <GridItem xs={12} sm={12} md={3}>
                 <TextField
                     id="outlined-email-input"
-                    label="Title1"
+                    label="Title"
                     className={classes.textField}
                     type="text"
                     fullWidth
-                    name="Title2"
+                    name="Title"
                     margin="normal"
                     variant="outlined"
                     />
@@ -462,24 +482,49 @@ class Review extends React.Component {
 {/*Last Divider */}
 <GridContainer>
  <GridItem xs={12} sm={12} md={2}>
-                <h7 className={classes.label}>Decision</h7>
+                <h7 className={classes.label}>Worker</h7>
                 </GridItem>
                 <GridItem xs={12} sm={12} md={3}>
           <FormControl required className={classes.formControl}>
-          <InputLabel htmlFor="decision-native-required">Decision</InputLabel>
+          <InputLabel htmlFor="Worker-native-required">Worker</InputLabel>
           <Select
             native
-            value={this.state.age}
-            onChange={this.handleChange('decision')}
-            name="decision"
+            value={this.state.Worker}
+            onChange={this.handleChange('Worker')}
+            name="Worker"
             inputProps={{   
-              id: 'decision-native-required',
+              id: 'Worker-native-required',
             }}
           >
             <option value="" />
-            <option value='Worker1'>Worker1</option>
-            <option value='Worker2'>Worker2</option>
-            <option value='Worker3'>Worker3</option>
+            <option value='Engineer1'>Engineer1</option>
+            <option value='Engineer2'>Engineer2</option>
+            <option value='Engineer3'>Engineer3</option>
+          </Select>
+          <FormHelperText>Required</FormHelperText>
+        </FormControl>
+
+                </GridItem>
+
+ <GridItem xs={12} sm={12} md={2}>
+                <h7 className={classes.label}>Activity</h7>
+                </GridItem>
+                <GridItem xs={12} sm={12} md={3}>
+          <FormControl required className={classes.formControl}>
+          <InputLabel htmlFor="active-native-required">Activity</InputLabel>
+          <Select
+            native
+            value={this.state.active}
+            onChange={this.handleChange('active')}
+            name="active"
+            inputProps={{   
+              id: 'active-native-required',
+            }}
+          >
+            <option value="" />
+            <option value='Worker1'>Request Process</option>
+            <option value='Worker2'>Open</option>
+            <option value='Worker3'>Complete Accepted</option>
           </Select>
           <FormHelperText>Required</FormHelperText>
         </FormControl>
@@ -497,16 +542,11 @@ class Review extends React.Component {
               
               <Button className={classes.buttonSubmit}>Submit</Button>
               
-              <Button className={classes.buttonSubmit}>Save</Button>
               </div>
             </CardFooter>
           </Card>
         </GridItem>
         
-      </GridContainer>
-        
-          </Card>
-        </GridItem>
       </GridContainer>
     </div>
   );

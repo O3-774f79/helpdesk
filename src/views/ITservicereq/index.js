@@ -39,7 +39,7 @@ class index extends PureComponent {
     const { classes } = this.props;
           return(
                <div>
-                       <Paper className={classes.paper}>
+                       {/* <Paper className={classes.paper}>
         <Grid xs={12}>
         <Topmenu1 />
        
@@ -48,12 +48,12 @@ class index extends PureComponent {
        
        <Grid xs={12}>
       
-       <Divider className={classes.divider} />
+       <Divider className={classes.divider} /> */}
                   
                       <Tasklist1 />
-                    
+{/*                     
                     </Grid>
-                    </Paper>
+                    </Paper> */}
                     {/* <ITformReq1 /> */}
                </div>
           )

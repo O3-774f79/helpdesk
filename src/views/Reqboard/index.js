@@ -43,13 +43,14 @@ class Reqboard extends React.Component {
        </Grid>
        <Grid xs={12}>
       
-       <Divider className={classes.divider} />
+       <Divider className={classes.divider} /> 
+   <Paper className={classes.paper}>
     <Manageboard />
-    
-    </Grid>
     </Paper>
-
-    {/* <Review /> */}
+    </Grid>
+    
+    </Paper>
+    {/* {/* <Review /> */}
     </div>
   );
 }

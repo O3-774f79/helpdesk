@@ -25,6 +25,15 @@ import Delete from "@material-ui/icons/Delete";
 
 
 const styles = theme => ({
+  buttonBuild: {
+   backgroundColor:"rgb(255, 184, 77)"
+  },
+  buttonDescription: {
+    backgroundColor:"rgb(128, 170, 255)"
+  },
+  buttonDelete: {
+    backgroundColor:"rgb(255, 0, 0)"
+  },
     button: {
       margin: theme.spacing.unit,
       minwitdth:300
@@ -48,7 +57,7 @@ const styles = theme => ({
     //    onClick={() => { history.push("/admin/ITformReq") }}
     //  ><Description />
     //  </Button>
-    <Button><Description /> </Button>
+    <Button ><Description /> </Button>
   ))
 
 
@@ -82,7 +91,15 @@ class Tasklist1 extends React.Component {
              onFilter: (value, record) => record.Folio.indexOf(value) === 0,
              sorter: (a, b) => a.Folio.length - b.Folio.length,
              sortDirections: ['descend','ascend'],
-           }, {
+           },
+           {
+            title: 'Country',
+            dataIndex: 'Country',
+            // onFilter: (value, record) => record.Country.indexOf(value) === 0,
+            // sorter: (a, b) => a.Country.length - b.Country.length,
+            // sortDirections: ['descend','ascend']
+          },
+           {
             title: 'Title',
             dataIndex: 'Title',
             onFilter: (value, record) => record.Title.indexOf(value) === 0,
@@ -143,6 +160,7 @@ class Tasklist1 extends React.Component {
           data:[{
              key: '1',
              Folio: 'ITSR-2000',
+             Country:'Thailand',
              Title:'E-mail service down',
              Activity: 'Request process',
              Datestart: '25/12/2018',
@@ -153,6 +171,7 @@ class Tasklist1 extends React.Component {
            }, {
              key: '2',
              Folio: 'ITSR-2001',
+             Country:'Singapore',
              Title:'Internet not access',
              Activity: 'Open - Request process',
              Datestart: '26/12/2018',
@@ -162,6 +181,7 @@ class Tasklist1 extends React.Component {
            }, {
              key: '3',
              Folio: 'ITSR-2002',
+             Country:'Malaysia',
              Title:'Password lock',
              Activity: 'Complete - Accepted',
              Datestart: '29/12/2018',
@@ -171,6 +191,7 @@ class Tasklist1 extends React.Component {
            }, {
              key: '4',
              Folio: 'ITSR-2003',
+             Country:'Indonisia',
              Title:'Blue screen',
              Activity: 'Open - Request process',
              Datestart: '5/01/2019',

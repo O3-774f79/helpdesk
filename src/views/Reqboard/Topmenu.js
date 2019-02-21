@@ -41,10 +41,10 @@ class Topmenu extends React.Component {
       </Grid>
       
       <Grid item xs>
-      <Paper className={classes.paper}>
+      {/* <Paper className={classes.paper}>
       <Button className={classes.button} fullWidth="true"><Settings />Start new IT service request
       </Button>
-      </Paper>
+      </Paper> */}
       </Grid>
       </Grid>
       

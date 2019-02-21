@@ -48,34 +48,41 @@ class Manageboard extends React.Component {
         columns:[{
              title: 'Folio',
              dataIndex: 'Folio',
-             filters: [{
-               text: 'Joe',
-               value: 'Joe',
-             }, {
-               text: 'Jim',
-               value: 'Jim',
-             }, {
-               text: 'Submenu',
-               value: 'Submenu',
-               children: [{
-                 text: 'Green',
-                 value: 'Green',
-               }, {
-                 text: 'Black',
-                 value: 'Black',
-               }],
-             }],
-             // specify the condition of filtering result
-             // here is that finding the name started with `value`
-             onFilter: (value, record) => record.Folio.indexOf(value) === 0,
-             sorter: (a, b) => a.Folio.length - b.Folio.length,
-             sortDirections: ['descend','ascend'],
-           }, {
+            //  filters: [{
+            //    text: 'Joe',
+            //    value: 'Joe',
+            //  }, {
+            //    text: 'Jim',
+            //    value: 'Jim',
+            //  }, {
+            //    text: 'Submenu',
+            //    value: 'Submenu',
+            //    children: [{
+            //      text: 'Green',
+            //      value: 'Green',
+            //    }, {
+            //      text: 'Black',
+            //      value: 'Black',
+            //    }],
+            //  }],
+
+            //  onFilter: (value, record) => record.Folio.indexOf(value) === 0,
+            //  sorter: (a, b) => a.Folio.length - b.Folio.length,
+            //  sortDirections: ['descend','ascend'],
+           },
+           {
+            title: 'Country',
+            dataIndex: 'Country',
+            // onFilter: (value, record) => record.Country.indexOf(value) === 0,
+            // sorter: (a, b) => a.Country.length - b.Country.length,
+            // sortDirections: ['descend','ascend']
+          },
+            {
             title: 'Title',
             dataIndex: 'Title',
-            onFilter: (value, record) => record.Title.indexOf(value) === 0,
-            sorter: (a, b) => a.Title.length - b.Title.length,
-            sortDirections: ['descend','ascend']
+            // onFilter: (value, record) => record.Title.indexOf(value) === 0,
+            // sorter: (a, b) => a.Title.length - b.Title.length,
+            // sortDirections: ['descend','ascend']
           }, {
              title: 'Activity',
              dataIndex: 'Activity',
@@ -124,25 +131,25 @@ class Manageboard extends React.Component {
           {
             title: 'Engineer',
             dataIndex: 'Engineer',
-            filters:[{
-                text:'Engineer1',
-                value:'Engineer1',
-            },
-            {
-                text:'Engineer2',
-                value:'Engineer2',
-            },
-            {
-                text:'Engineer3',
-                value:'Engineer3',
-            },
-            {
-                text:'Engineer4',
-                value:'Engineer4',
-            },],
-            onFilter: (value, record) => record.Engineer.indexOf(value) === 0,
-            sorter: (a, b) => a.Engineer.length - b.Engineer.length,
-            sortDirections: ['descend', 'ascend'],
+            // filters:[{
+            //     text:'Engineer1',
+            //     value:'Engineer1',
+            // },
+            // {
+            //     text:'Engineer2',
+            //     value:'Engineer2',
+            // },
+            // {
+            //     text:'Engineer3',
+            //     value:'Engineer3',
+            // },
+            // {
+            //     text:'Engineer4',
+            //     value:'Engineer4',
+            // },],
+            // onFilter: (value, record) => record.Engineer.indexOf(value) === 0,
+            // sorter: (a, b) => a.Engineer.length - b.Engineer.length,
+            // sortDirections: ['descend', 'ascend'],
           },
           {
             title: 'Viewflow',
@@ -158,6 +165,7 @@ class Manageboard extends React.Component {
           data:[{
              key: '1',
              Folio: 'ITSR-2000',
+             Country:'Thailand',
              Title:'E-mail service down',
              Activity: 'Request process',
              Datestart: '25/12/2018',
@@ -169,6 +177,7 @@ class Manageboard extends React.Component {
            }, {
              key: '2',
              Folio: 'ITSR-2001',
+             Country:'Singapore',
              Title:'Internet not access',
              Activity: 'Open - Request process',
              Datestart: '26/12/2018',
@@ -180,6 +189,7 @@ class Manageboard extends React.Component {
            }, {
              key: '3',
              Folio: 'ITSR-2002',
+             Country:'Malaysia',
              Title:'Password lock',
              Activity: 'Complete - Accepted',
              Datestart: '29/12/2018',
@@ -191,6 +201,7 @@ class Manageboard extends React.Component {
            }, {
              key: '4',
              Folio: 'ITSR-2003',
+             Country:'Indonisia',
              Title:'Blue screen',
              Activity: 'Open - Request process',
              Datestart: '5/01/2019',

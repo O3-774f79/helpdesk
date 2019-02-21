@@ -1,3 +1,5 @@
+
+import Dashboard from "@material-ui/icons/Dashboard";
 // @material-ui/icons
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
 // core components/views for Admin layout
@@ -12,33 +14,27 @@ import Review from "./views/Reqboard/Review";
 import ITformReq1 from "./views/ITservicereq/ITformReq1";
 // import admintable from "./views/Reqboard/admintable";
 
+import DashboardPage from './views/Dashboard/Dashboard'
 
 
 const dashboardRoutes = [
+ {
+    path: "/dashboard",
+    name: "Dashboard",
+    rtlName: "لوحة القيادة",
+    icon: Dashboard,
+    component: DashboardPage,
+    layout: "/admin"
+  },
   {
     path: "/ITservicereq",
-    name: "Service User Request Task List",
+    name: "User Inbox",
     rtlName: "لوحة القيادة",
     icon: LibraryBooks,
     component: ITservicereq,
     layout: "/admin"
   },
-  // {
-  //   path: "/ITformReq",
-  //   name: "IT Request",
-  //   rtlName: "لوحة القيادة",
-  //   icon: LibraryBooks,
-  //   component: ITformReq,
-  //   layout: "/admin"
-  // },
-  {
-    path: "/Reqboard",
-    name: "Service Admin Request Task List",
-    rtlName: "لوحة القيادة",
-    icon: LibraryBooks,
-    component: Reqboard,
-    layout: "/admin"
-  },
+  
   {
     path: "/ITformReq1",
     name: "User Form",
@@ -47,6 +43,16 @@ const dashboardRoutes = [
     component: ITformReq1,
     layout: "/admin"
   },
+  
+  {
+    path: "/Reqboard",
+    name: "Admin Inbox",
+    rtlName: "لوحة القيادة",
+    icon: LibraryBooks,
+    component: Reqboard,
+    layout: "/admin"
+  },
+  
   {
     path: "/Review",
     name: "Admin Form",
@@ -55,6 +61,17 @@ const dashboardRoutes = [
     component: Review,
     layout: "/admin"
   },
+ 
+ 
+  // {
+  //   path: "/ITformReq",
+  //   name: "IT Request",
+  //   rtlName: "لوحة القيادة",
+  //   icon: LibraryBooks,
+  //   component: ITformReq,
+  //   layout: "/admin"
+  // },
+  
   // {
   //   path: "/admintable",
   //   name: "Admin table",

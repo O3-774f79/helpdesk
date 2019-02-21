@@ -129,7 +129,7 @@ class Review extends React.Component {
             <CardBody>
             <Steps>
             <Step status="finish" title="Request process" icon={<Icon type="user" />} />
-            <Step status="finish" title="Open" icon={<Icon type="solution" />} />
+            <Step status="finish" title="Recieved" icon={<Icon type="solution" />} />
             <Step status="process" title="Process" icon={<Icon type="tool" />} />
             <Step status="wait" title="Complete - Accepted" icon={<Icon type="smile-o" />} />
             </Steps>
@@ -233,6 +233,39 @@ class Review extends React.Component {
                     </Toolbar>
                 </AppBar>
                 <CardBody>
+                  
+                <GridContainer>
+                <GridItem xs={12} sm={12} md={2}>
+                <h7 className={classes.label}>Country</h7>
+                </GridItem>
+                <GridItem xs={12} sm={12} md={3}>
+          <FormControl required className={classes.formControl}>
+          <InputLabel htmlFor="country-native-required">Country</InputLabel>
+          <Select
+            native
+            value={this.state.country}
+            onChange={this.handleChange('country')}
+            name="country"
+            inputProps={{
+              id: 'country-native-required',
+            }}
+          >
+            <option value="" />
+            <option value='Thailand'>Thailand</option>
+            <option value='Malaysia'>Malaysia</option>
+            <option value='Indonisia'>Indonisia</option>
+            <option value='Singapore'>Singapore</option>
+          </Select>
+          <FormHelperText>Required</FormHelperText>
+        </FormControl>
+
+                </GridItem>
+                
+                
+              </GridContainer>  
+
+
+                  
                 <GridContainer>
                 <GridItem xs={12} sm={12} md={2}>
                 <h7 className={classes.label}>Business Unit:</h7>

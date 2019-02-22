@@ -61,7 +61,7 @@ const styles = {
     marginTop: 30
   },
   headerAppBar:{
-    backgroundColor: "rgb(0, 230, 0)",
+    backgroundColor: "rgb(179, 179, 255)",
     color: "rgb(0, 0, 0)"
   },
   buttonSubmit: {

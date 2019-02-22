@@ -15,17 +15,18 @@ var delays2 = 80,
 // // // Daily Sales
 // #############################
 
-const dailySalesChart = {
+const dailySalesChart3 = {
   data: {
-    labels: ["TH", "MY", "ID", "SG",],
-    series: [[25, 74, 61, 33, ]]
+    labels: [
+    "Mon",  "Tue",  "Wed", "Thu",  "Fri",  "Sa", "Sun" ],
+    series: [[18, 2, 13,28, 14, 3, 7 ]]
   },
   options: {
     lineSmooth: Chartist.Interpolation.cardinal({
       tension: 0
     }),
     low: 0,
-    high: 100, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+    high: 30, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
     chartPadding: {
       top: 0,
       right: 0,
@@ -69,34 +70,18 @@ const dailySalesChart = {
 // // // Email Subscriptions
 // #############################
 
-const emailsSubscriptionChart = {
-  // data: {
-  //   labels: [
-  //     "Jan",
-  //     "Feb",
-  //     "Mar",
-  //     "Apr",
-  //     "Mai",
-  //     "Jun",
-  //     "Jul",
-  //     "Aug",
-  //     "Sep",
-  //     "Oct",
-  //     "Nov",
-  //     "Dec"
-  //   ],
-  //   series: [[542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]]
-  // },
+const emailsSubscriptionChart3 = {
   data: {
-    labels: ["TH", "MY", "ID", "SG",],
-    series: [[456, 534, 890, 256, ]]
+    labels: [
+      "Mon",  "Tue",  "Wed", "Thu",  "Fri",  "Sa", "Sun" ],
+      series: [[10, 5, 6, 20, 12, 3, 7 ]]
   },
   options: {
     axisX: {
       showGrid: false
     },
     low: 0,
-    high: 1000,
+    high: 30,
     chartPadding: {
       top: 0,
       right: 5,
@@ -138,17 +123,17 @@ const emailsSubscriptionChart = {
 // // // Completed Tasks
 // #############################
 
-const completedTasksChart = {
+const completedTasksChart3 = {
   data: {
-    labels: ["12am", "3pm", "6pm", "9pm", "12pm", "3am", "6am", "9am"],
-    series: [[230, 750, 450, 300, 280, 240, 200, 190]]
+    labels: ["Mon",  "Tue",  "Wed", "Thu",  "Fri",  "Sa", "Sun" ],
+    series: [[10, 8, 8,15, 23, 13, 7 ]]
   },
   options: {
     lineSmooth: Chartist.Interpolation.cardinal({
       tension: 0
     }),
     low: 0,
-    high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+    high: 30, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
     chartPadding: {
       top: 0,
       right: 0,
@@ -188,7 +173,7 @@ const completedTasksChart = {
 };
 
 module.exports = {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  completedTasksChart
+  dailySalesChart3,
+  emailsSubscriptionChart3,
+  completedTasksChart3
 };

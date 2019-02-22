@@ -17,6 +17,8 @@ import AccessTime from "@material-ui/icons/AccessTime";
 // import BugReport from "@material-ui/icons/BugReport";
 // import Code from "@material-ui/icons/Code";
 // import Cloud from "@material-ui/icons/Cloud";
+// import Assessment from "@material-ui/icons/Assessment";
+
 // core components
 import GridItem from "components/Grid/GridItem.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
@@ -31,50 +33,19 @@ import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 
 // import { bugs, website, server } from "variables/general.jsx";
-//import ant Design component
-import 'antd/dist/antd.css';
-import './index.css';
-// import { Modal, Button } from 'antd';
 
 import {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  // completedTasksChart
-} from "variables/charts.jsx";
-
-
+  dailySalesChart3,
+  emailsSubscriptionChart3,
+  completedTasksChart3
+} from "variables/charts3.jsx";
 
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
 
-class Dashboard extends React.Component {
+class Dashboard3 extends React.Component {
   state = {
-    value: 0,
-    visible: false
+    value: 0
   };
-
-  showModal = () => {
-    this.setState({
-      visible: true,
-    });
-  }
-
-  handleOk = (e) => {
-    console.log(e);
-    this.setState({
-      visible: false,
-    });
-  }
-
-  handleCancel = (e) => {
-    console.log(e);
-    this.setState({
-      visible: false,
-    });
-  }
-
-
-
-
   handleChange = (event, value) => {
     this.setState({ value });
   };
@@ -93,18 +64,18 @@ class Dashboard extends React.Component {
                 <CardIcon color="warning">
                   <Icon>content_copy</Icon>
                 </CardIcon>
-                <p className={classes.cardCategory}>Used Space</p>
+                <p className={classes.cardCategory}>Thailand</p>
                 <h3 className={classes.cardTitle}>
-                  49/50 <small>GB</small>
+                  25 <small>Tasks</small>
                 </h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <Danger>
+                  <Assessment>
                     <Warning />
-                  </Danger>
+                  </Assessment>
                   <a href="#pablo" onClick={e => e.preventDefault()}>
-                    Get more space
+                    More Detail
                   </a>
                 </div>
               </CardFooter>
@@ -116,13 +87,15 @@ class Dashboard extends React.Component {
                 <CardIcon color="success">
                   <Store />
                 </CardIcon>
-                <p className={classes.cardCategory}>Revenue</p>
-                <h3 className={classes.cardTitle}>$34,245</h3>
+                <p className={classes.cardCategory}>Malaysia</p>
+                <h3 className={classes.cardTitle}>49 <small>Tasks</small></h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <DateRange />
-                  Last 24 Hours
+                  <Assessment />
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    More Detail
+                  </a>
                 </div>
               </CardFooter>
             </Card>
@@ -133,13 +106,15 @@ class Dashboard extends React.Component {
                 <CardIcon color="danger">
                   <Icon>info_outline</Icon>
                 </CardIcon>
-                <p className={classes.cardCategory}>Fixed Issues</p>
-                <h3 className={classes.cardTitle}>75</h3>
+                <p className={classes.cardCategory}>Indonisia</p>
+                <h3 className={classes.cardTitle}>75 <small>Tasks</small></h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <LocalOffer />
-                  Tracked from Github
+                  <Assessment />
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    More Detail
+                  </a>
                 </div>
               </CardFooter>
             </Card>
@@ -150,32 +125,35 @@ class Dashboard extends React.Component {
                 <CardIcon color="info">
                   <Accessibility />
                 </CardIcon>
-                <p className={classes.cardCategory}>Followers</p>
-                <h3 className={classes.cardTitle}>+245</h3>
+                <p className={classes.cardCategory}>Singapore</p>
+                <h3 className={classes.cardTitle}>27 <small>Tasks</small></h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <Update />
-                  Just Updated
+                  <Assessment />
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    More Detail
+                  </a>
                 </div>
               </CardFooter>
             </Card>
           </GridItem>
         </GridContainer> */}
         <GridContainer>
-          <GridItem xs={12} sm={12} md={6}>
+          <GridItem xs={12} sm={12} md={4}>
             <Card chart>
-              <CardHeader color="success">
+              <CardHeader color="danger">
                 <ChartistGraph
                   className="ct-chart"
-                  data={dailySalesChart.data}
+                  data={dailySalesChart3.data}
                   type="Line"
-                  options={dailySalesChart.options}
-                  listener={dailySalesChart.animation}
+                // type="Bar"
+                  options={dailySalesChart3.options}
+                  listener={dailySalesChart3.animation}
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>Monthly Issues</h4>
+                <h4 className={classes.cardTitle}>Request Task</h4>
                 <p className={classes.cardCategory}>
                   <span className={classes.successText}>
                     {/* <ArrowUpward className={classes.upArrowCardCategory} /> 55% */}
@@ -190,21 +168,21 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={12} md={6}>
+          <GridItem xs={12} sm={12} md={4}>
             <Card chart>
               <CardHeader color="warning">
                 <ChartistGraph
                   className="ct-chart"
-                  data={emailsSubscriptionChart.data}
+                  data={emailsSubscriptionChart3.data}
                   // type="Bar"
                   type="Line"
-                  options={emailsSubscriptionChart.options}
-                  responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-                  listener={emailsSubscriptionChart.animation}
+                  options={emailsSubscriptionChart3.options}
+                  responsiveOptions={emailsSubscriptionChart3.responsiveOptions}
+                  listener={emailsSubscriptionChart3.animation}
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>Yearly Issues</h4>
+                <h4 className={classes.cardTitle}>Pending Task</h4>
                 <p className={classes.cardCategory}>
                   {/* Last Campaign Performance */}
                 </p>
@@ -216,30 +194,31 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-          {/* <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={4}>
             <Card chart>
-              <CardHeader color="danger">
+              <CardHeader color="success">
                 <ChartistGraph
                   className="ct-chart"
-                  data={completedTasksChart.data}
+                  data={completedTasksChart3.data}
                   type="Line"
-                  options={completedTasksChart.options}
-                  listener={completedTasksChart.animation}
+                // type="Bar"
+                  options={completedTasksChart3.options}
+                  listener={completedTasksChart3.animation}
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>Completed Tasks</h4>
+                <h4 className={classes.cardTitle}>Complete Tasks</h4>
                 <p className={classes.cardCategory}>
-                  Last Campaign Performance
+                  {/* Last Campaign Performance */}
                 </p>
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime /> campaign sent 2 days ago
+                <AccessTime /> updated 4 minutes ago
                 </div>
               </CardFooter>
             </Card>
-          </GridItem> */}
+          </GridItem>
         </GridContainer>
 
 {/* Copy Graph here */}
@@ -250,10 +229,10 @@ class Dashboard extends React.Component {
               <CardHeader color="success">
                 <ChartistGraph
                   className="ct-chart"
-                  data={dailySalesChart.data}
+                  data={dailySalesChart3.data}
                   type="Line"
-                  options={dailySalesChart.options}
-                  listener={dailySalesChart.animation}
+                  options={dailySalesChart3.options}
+                  listener={dailySalesChart3.animation}
                 />
               </CardHeader>
               <CardBody>
@@ -277,11 +256,11 @@ class Dashboard extends React.Component {
               <CardHeader color="warning">
                 <ChartistGraph
                   className="ct-chart"
-                  data={emailsSubscriptionChart.data}
+                  data={emailsSubscriptionChart3.data}
                   type="Bar"
-                  options={emailsSubscriptionChart.options}
-                  responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-                  listener={emailsSubscriptionChart.animation}
+                  options={emailsSubscriptionChart3.options}
+                  responsiveOptions={emailsSubscriptionChart3.responsiveOptions}
+                  listener={emailsSubscriptionChart3.animation}
                 />
               </CardHeader>
               <CardBody>
@@ -302,10 +281,10 @@ class Dashboard extends React.Component {
               <CardHeader color="danger">
                 <ChartistGraph
                   className="ct-chart"
-                  data={completedTasksChart.data}
+                  data={completedTasksChart3.data}
                   type="Line"
-                  options={completedTasksChart.options}
-                  listener={completedTasksChart.animation}
+                  options={completedTasksChart3.options}
+                  listener={completedTasksChart3.animation}
                 />
               </CardHeader>
               <CardBody>
@@ -321,8 +300,8 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-        </GridContainer> */}
-
+        </GridContainer>
+ */}
 
 
 {/* End of copy */}
@@ -379,12 +358,12 @@ class Dashboard extends React.Component {
               <CardBody>
                 <Table
                   tableHeaderColor="warning"
-                  tableHead={["ID", "Name", "Status", "UniqueID"]}
+                  tableHead={["ID", "Name", "Salary", "Country"]}
                   tableData={[
-                    ["1", "Dakota Rice", "Working", "Engineer1"],
-                    ["2", "Minerva Hooper", "Holiday", "Engineer2"],
-                    ["3", "Sage Rodriguez", "Working", "Engineer3"],
-                    ["4", "Philip Chaney", "Working", "Engineer4"]
+                    ["1", "Dakota Rice", "$36,738", "Niger"],
+                    ["2", "Minerva Hooper", "$23,789", "Curaçao"],
+                    ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
+                    ["4", "Philip Chaney", "$38,735", "Korea, South"]
                   ]}
                 />
               </CardBody>
@@ -396,8 +375,8 @@ class Dashboard extends React.Component {
   }
 }
 
-Dashboard.propTypes = {
+Dashboard3.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(dashboardStyle)(Dashboard);
+export default withStyles(dashboardStyle)(Dashboard3);

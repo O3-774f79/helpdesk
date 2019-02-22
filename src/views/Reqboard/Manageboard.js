@@ -21,6 +21,8 @@ import Build from "@material-ui/icons/Build";
 import Delete from "@material-ui/icons/Delete";
 // import { Link } from '@material-ui/core';
 
+
+
 const styles = theme => ({
     button: {
       margin: theme.spacing.unit,
@@ -35,9 +37,10 @@ const styles = theme => ({
       color: theme.palette.text.secondary,
     },
     headerAppBar:{
-        backgroundColor: "rgb(0, 230, 0)",
+        backgroundColor: "rgb(179, 179, 255)",
         color: "rgb(0, 0, 0)"
       },
+      
   });
 
 function onChange(pagination, filters, sorter) {
@@ -65,7 +68,7 @@ class Manageboard extends React.Component {
             //      value: 'Black',
             //    }],
             //  }],
-
+                defaultSortOrder: 'descend', 
             //  onFilter: (value, record) => record.Folio.indexOf(value) === 0,
             //  sorter: (a, b) => a.Folio.length - b.Folio.length,
             //  sortDirections: ['descend','ascend'],
@@ -73,9 +76,22 @@ class Manageboard extends React.Component {
            {
             title: 'Country',
             dataIndex: 'Country',
-            // onFilter: (value, record) => record.Country.indexOf(value) === 0,
-            // sorter: (a, b) => a.Country.length - b.Country.length,
-            // sortDirections: ['descend','ascend']
+            filters:[{
+              text:'Thailand',
+              value:'Thailand',
+            },{
+              text:'Malaysia',
+              value:'Malaysia',
+            },{
+              text:'Indonisia',
+              value:'Indonisia',
+            },{
+              text:'Singapore',
+              value:'Singapore',
+            },],
+            onFilter: (value, record) => record.Country.indexOf(value) === 0,
+            sorter: (a, b) => a.Country.length - b.Country.length,
+            sortDirections: ['descend','ascend']
           },
             {
             title: 'Title',
@@ -155,9 +171,9 @@ class Manageboard extends React.Component {
             title: 'Viewflow',
             dataIndex: 'Viewflow',
             render: () => (
-            [<Button><Description/> </Button>,
-                <Button><Build/> </Button>,
-                <Button><Delete/> </Button>]
+            [<Button color="primary" ><Description/> </Button>,
+                <Button color="inherit" ><Build/> </Button>,
+                <Button color="secondary" ><Delete/> </Button>]
             ),
             
           },],
@@ -168,7 +184,7 @@ class Manageboard extends React.Component {
              Country:'Thailand',
              Title:'E-mail service down',
              Activity: 'Request process',
-             Datestart: '25/12/2018',
+             Datestart: '02/01/2019',
              Timestart:'10:43',
              Dateend: '-',
              Timeend:'-',
@@ -180,7 +196,7 @@ class Manageboard extends React.Component {
              Country:'Singapore',
              Title:'Internet not access',
              Activity: 'Open - Request process',
-             Datestart: '26/12/2018',
+             Datestart: '03/01/2019',
              Timestart:'14:03',
              Dateend: '-',
              Timeend:'',
@@ -192,9 +208,9 @@ class Manageboard extends React.Component {
              Country:'Malaysia',
              Title:'Password lock',
              Activity: 'Complete - Accepted',
-             Datestart: '29/12/2018',
+             Datestart: '05/12/2019',
              Timestart:'12:12',
-             Dateend: '29/12/2018',
+             Dateend: '06/12/2018',
              Timeend:'13:32',
              Engineer:'Engineer3',
             
@@ -204,13 +220,221 @@ class Manageboard extends React.Component {
              Country:'Indonisia',
              Title:'Blue screen',
              Activity: 'Open - Request process',
-             Datestart: '5/01/2019',
-             Timestart:'9:21',
+             Datestart: '07/01/2019',
+             Timestart:'14:02',
              Dateend: '-',
              Timeend:'-',
              Engineer:'Engineer4',
              
-           }]
+           },
+           {
+            key: '5',
+            Folio: 'ITSR-2004',
+            Country:'Indonisia',
+            Title:'No power',
+            Activity: 'Open - Request process',
+            Datestart: '08/01/2019',
+            Timestart:'16:21',
+            Dateend: '-',
+            Timeend:'-',
+            Engineer:'Engineer2',
+            
+          },
+          {
+            key: '6',
+            Folio: 'ITSR-2005',
+            Country:'Malaysia',
+            Title:'Blue screen',
+            Activity: 'Open - Request process',
+            Datestart: '09/01/2019',
+            Timestart:'09:21',
+            Dateend: '-',
+            Timeend:'-',
+            Engineer:'Engineer2',
+            
+          },
+          {
+            key: '7',
+            Folio: 'ITSR-2006',
+            Country:'Singapore',
+            Title:'Internet not access',
+            Activity: 'Complete - Accepted',
+            Datestart: '11/01/2019',
+            Timestart:'10:34',
+            Dateend: '11/01/2019',
+            Timeend:'14:05',
+            Engineer:'Engineer1',
+            
+          },
+          {
+            key: '8',
+            Folio: 'ITSR-2007',
+            Country:'Thailand',
+            Title:'Password lock',
+            Activity: 'Complete - Accepted',
+            Datestart: '12/01/2019',
+            Timestart:'08:12',
+            Dateend: '12/01/2019',
+            Timeend:'10:15',
+            Engineer:'Engineer3',
+            
+          },
+          {
+            key: '9',
+            Folio: 'ITSR-2008',
+            Country:'Singapore',
+            Title:'Blue screen',
+            Activity: 'Open - Request process',
+            Datestart: '15/01/2019',
+            Timestart:'09:21',
+            Dateend: '16/01/2019',
+            Timeend:'09:30',
+            Engineer:'Engineer4',
+            
+          },
+          {
+            key: '10',
+            Folio: 'ITSR-2009',
+            Country:'Malaysia',
+            Title:'No power',
+            Activity: 'Open - Request process',
+            Datestart: '20/01/2019',
+            Timestart:'13:54',
+            Dateend: '-',
+            Timeend:'-',
+            Engineer:'Engineer1',
+            
+          },
+          {
+            key: '11',
+            Folio: 'ITSR-2010',
+            Country:'Malaysia',
+            Title:'No power',
+            Activity: 'Open - Request process',
+            Datestart: '21/01/2019',
+            Timestart:'14:23',
+            Dateend: '-',
+            Timeend:'-',
+            Engineer:'Engineer3',
+            
+          },
+          {
+            key: '12',
+            Folio: 'ITSR-2011',
+            Country:'Malaysia',
+            Title:'No power',
+            Activity: 'Open - Request process',
+            Datestart: '21/01/2019',
+            Timestart:'15:41',
+            Dateend: '-',
+            Timeend:'-',
+            Engineer:'Engineer1',
+            
+          },
+          {
+            key: '13',
+            Folio: 'ITSR-2002',
+            Country:'Malaysia',
+            Title:'No power',
+            Activity: 'Open - Request process',
+            Datestart: '22/01/2019',
+            Timestart:'09:45',
+            Dateend: '-',
+            Timeend:'-',
+            Engineer:'Engineer2',
+            
+          },
+          {
+            key: '14',
+            Folio: 'ITSR-2013',
+            Country:'Malaysia',
+            Title:'No power',
+            Activity: 'Open - Request process',
+            Datestart: '23/01/2019',
+            Timestart:'14:56',
+            Dateend: '-',
+            Timeend:'-',
+            Engineer:'Engineer2',
+            
+          },
+          {
+            key: '15',
+            Folio: 'ITSR-2014',
+            Country:'Indonisia',
+            Title:'E-mail service down',
+            Activity: 'Open - Request process',
+            Datestart: '25/01/2019',
+            Timestart:'15:01',
+            Dateend: '-',
+            Timeend:'-',
+            Engineer:'Engineer4',
+            
+          },
+          {
+            key: '16',
+            Folio: 'ITSR-2015',
+            Country:'Singapore',
+            Title:'Program cannot open',
+            Activity: 'Open - Request process',
+            Datestart: '26/01/2019',
+            Timestart:'10:43',
+            Dateend: '-',
+            Timeend:'-',
+            Engineer:'Engineer1',
+            
+          },
+          {
+            key: '17',
+            Folio: 'ITSR-2016',
+            Country:'Indonisia',
+            Title:'No power PC',
+            Activity: 'Open - Request process',
+            Datestart: '26/01/2019',
+            Timestart:'15:05',
+            Dateend: '-',
+            Timeend:'-',
+            Engineer:'Engineer1',
+            
+          },
+          {
+            key: '18',
+            Folio: 'ITSR-2017',
+            Country:'Indonisia',
+            Title:'E-mail service down',
+            Activity: 'Open - Request process',
+            Datestart: '27/01/2019',
+            Timestart:'13:39',
+            Dateend: '-',
+            Timeend:'-',
+            Engineer:'Engineer2',
+            
+          },
+          {
+            key: '19',
+            Folio: 'ITSR-2018',
+            Country:'Singapore',
+            Title:'E-mail service down',
+            Activity: 'Open - Request process',
+            Datestart: '28/01/2019',
+            Timestart:'11:12',
+            Dateend: '-',
+            Timeend:'-',
+            Engineer:'Engineer2',
+            
+          },
+          {
+            key: '20',
+            Folio: 'ITSR-2019',
+            Country:'Indonisia',
+            Title:'E-mail service down',
+            Activity: 'Open - Request process',
+            Datestart: '30/01/2019',
+            Timestart:'14:09',
+            Dateend: '-',
+            Timeend:'-',
+            Engineer:'Engineer2',
+            
+          },]
      }
     render(){
 
@@ -232,7 +456,8 @@ class Manageboard extends React.Component {
          columns={this.state.columns} 
          dataSource={this.state.data} 
          onChange={onChange} 
-         pagination={false}/>
+          pagination={{pageSize:10}}
+         />
 
     </div>
   );

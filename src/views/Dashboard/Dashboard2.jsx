@@ -1,10 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
+
+//import ant Design component
+import 'antd/dist/antd.css';
+import './index.css';
+import { Modal, } from 'antd';
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // @material-ui/core
 import withStyles from "@material-ui/core/styles/withStyles";
-// import Icon from "@material-ui/core/Icon";
+import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
 // import Store from "@material-ui/icons/Store";
 // import Warning from "@material-ui/icons/Warning";
@@ -17,6 +22,8 @@ import AccessTime from "@material-ui/icons/AccessTime";
 // import BugReport from "@material-ui/icons/BugReport";
 // import Code from "@material-ui/icons/Code";
 // import Cloud from "@material-ui/icons/Cloud";
+// import Assessment from "@material-ui/icons/Assessment";
+
 // core components
 import GridItem from "components/Grid/GridItem.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
@@ -26,55 +33,40 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 // import Danger from "components/Typography/Danger.jsx";
 import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
-// import CardIcon from "components/Card/CardIcon.jsx";
+import CardIcon from "components/Card/CardIcon.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
+import Button from '@material-ui/core/Button';
 
 // import { bugs, website, server } from "variables/general.jsx";
-//import ant Design component
-import 'antd/dist/antd.css';
-import './index.css';
-// import { Modal, Button } from 'antd';
 
 import {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  // completedTasksChart
-} from "variables/charts.jsx";
-
-
+  // countrytask2,
+  dailySalesChart2,
+  emailsSubscriptionChart2,
+  completedTasksChart2
+} from "variables/charts2.jsx";
 
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
+import Dashboard3 from "./Dashboard3";
 
-class Dashboard extends React.Component {
+// const styles = theme => ({
+//   margin: {
+//    margin:30
+//   },
+// }
+// )
+
+
+
+class Dashboard2 extends React.Component {
   state = {
     value: 0,
-    visible: false
+    visible1: false,
+    visible2: false,
+    visible3: false,
+    visible4: false,
   };
-
-  showModal = () => {
-    this.setState({
-      visible: true,
-    });
-  }
-
-  handleOk = (e) => {
-    console.log(e);
-    this.setState({
-      visible: false,
-    });
-  }
-
-  handleCancel = (e) => {
-    console.log(e);
-    this.setState({
-      visible: false,
-    });
-  }
-
-
-
-
   handleChange = (event, value) => {
     this.setState({ value });
   };
@@ -82,30 +74,161 @@ class Dashboard extends React.Component {
   handleChangeIndex = index => {
     this.setState({ value: index });
   };
+  ///---1
+  showModal1 = () => {
+    this.setState({
+      visible1: true,
+    });
+  }
+
+  handleOk1 = (e) => {
+    console.log(e);
+    this.setState({
+      visible1: false,
+    });
+  }
+
+  handleCancel1 = (e) => {
+    console.log(e);
+    this.setState({
+      visible1: false,
+    });
+  }
+///---2
+ 
+showModal2 = () => {
+  this.setState({
+    visible2: true,
+  });
+}
+
+handleOk2 = (e) => {
+  console.log(e);
+  this.setState({
+    visible2: false,
+  });
+}
+
+handleCancel2 = (e) => {
+  console.log(e);
+  this.setState({
+    visible2: false,
+  });
+}
+
+ ///---3
+showModal3 = () => {
+  this.setState({
+    visible3: true,
+  });
+}
+
+handleOk3 = (e) => {
+  console.log(e);
+  this.setState({
+    visible3: false,
+  });
+}
+
+handleCancel3 = (e) => {
+  console.log(e);
+  this.setState({
+    visible3: false,
+  });
+}
+///---4
+ 
+showModal4 = () => {
+  this.setState({
+    visible4: true,
+  });
+}
+
+handleOk4 = (e) => {
+  console.log(e);
+  this.setState({
+    visible4: false,
+  });
+}
+
+handleCancel4 = (e) => {
+  console.log(e);
+  this.setState({
+    visible4: false,
+  });
+}
+
+  
   render() {
     const { classes } = this.props;
     return (
       <div>
         {/* <GridContainer>
+          <GridItem xs={12} sm={12} md={12}>
+            <Card chart>
+              <CardHeader color="success">
+                <ChartistGraph
+                  className="ct-chart"
+                  data={countrytask2.data}
+                //   type="Line"
+                type="Bar"
+                  options={countrytask2.options}
+                  listener={countrytask2.animation}
+                />
+              </CardHeader>
+              <CardBody>
+                <h4 className={classes.cardTitle}>Monthly Task</h4>
+                <p className={classes.cardCategory}>
+                  <span className={classes.successText}> */}
+                    {/* <ArrowUpward className={classes.upArrowCardCategory} /> 55% */}
+                  {/* </span>{" "} */}
+                  {/* increase in today sales. */}
+                {/* </p>
+              </CardBody>
+              <CardFooter chart>
+                <div className={classes.stats}>
+                  <AccessTime /> updated 4 minutes ago
+                </div>
+              </CardFooter>
+            </Card>
+          </GridItem>
+          </GridContainer> */}
+          
+
+        <GridContainer>
           <GridItem xs={12} sm={6} md={3}>
             <Card>
               <CardHeader color="warning" stats icon>
                 <CardIcon color="warning">
-                  <Icon>content_copy</Icon>
+                  {/* <Icon>content_copy</Icon> */}
+                  {/* <Icon>looks_one</Icon>  */}
+                  <Icon>public</Icon> 
                 </CardIcon>
-                <p className={classes.cardCategory}>Used Space</p>
+                <p className={classes.cardCategory}>Thailand</p>
                 <h3 className={classes.cardTitle}>
-                  49/50 <small>GB</small>
+                  25 <small>Tasks</small>
                 </h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <Danger>
+                  {/* <Assessment >
                     <Warning />
-                  </Danger>
-                  <a href="#pablo" onClick={e => e.preventDefault()}>
-                    Get more space
-                  </a>
+                  </Assessment> */}
+                  {/* <a href="#pablo" onClick={e => e.preventDefault()}> */}
+                  <Button type="default" onClick={this.showModal1}>
+                  More Detail
+        </Button>
+        <Modal
+          title="Thailand"
+          width="70%"
+          visible={this.state.visible1}
+          onOk={this.handleOk1}
+          onCancel={this.handleCancel1}
+          footer={false}
+        >
+         <Dashboard3 />
+        </Modal>  
+                  {/* </a> */}
                 </div>
               </CardFooter>
             </Card>
@@ -114,15 +237,31 @@ class Dashboard extends React.Component {
             <Card>
               <CardHeader color="success" stats icon>
                 <CardIcon color="success">
-                  <Store />
+                  {/* <Store /> */}
+                  {/* <Icon>looks_two</Icon> */}
+                  <Icon>public</Icon> 
                 </CardIcon>
-                <p className={classes.cardCategory}>Revenue</p>
-                <h3 className={classes.cardTitle}>$34,245</h3>
+                <p className={classes.cardCategory}>Malaysia</p>
+                <h3 className={classes.cardTitle}>49 <small>Tasks</small></h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <DateRange />
-                  Last 24 Hours
+                  {/* <Assessment /> */}
+                  {/* <a href="#pablo" onClick={e => e.preventDefault()}> */}
+                  <Button type="default" onClick={this.showModal2}>
+                  More Detail
+        </Button>
+        <Modal
+          title="Malaysia"
+          width="70%"
+          visible={this.state.visible2}
+          onOk={this.handleOk2}
+          onCancel={this.handleCancel2}
+          footer={false}
+        >
+         <Dashboard3 />
+        </Modal>  
+                  {/* </a> */}
                 </div>
               </CardFooter>
             </Card>
@@ -131,15 +270,31 @@ class Dashboard extends React.Component {
             <Card>
               <CardHeader color="danger" stats icon>
                 <CardIcon color="danger">
-                  <Icon>info_outline</Icon>
+                  {/* <Icon>info_outline</Icon> */}
+                  {/* <Icon>looks_3</Icon>  */}
+                  <Icon>public</Icon> 
                 </CardIcon>
-                <p className={classes.cardCategory}>Fixed Issues</p>
-                <h3 className={classes.cardTitle}>75</h3>
+                <p className={classes.cardCategory}>Indonisia</p>
+                <h3 className={classes.cardTitle}>75 <small>Tasks</small></h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <LocalOffer />
-                  Tracked from Github
+                  {/* <Assessment /> */}
+                  {/* <a href="#pablo" onClick={e => e.preventDefault()}> */}
+                  <Button type="default" onClick={this.showModal3}>
+                  More Detail
+        </Button>
+        <Modal
+          title="Indonisia"
+          width="70%"
+          visible={this.state.visible3}
+          onOk={this.handleOk3}
+          onCancel={this.handleCancel3}
+          footer={false}
+        >
+         <Dashboard3 />
+        </Modal>  
+                  {/* </a> */}
                 </div>
               </CardFooter>
             </Card>
@@ -148,34 +303,51 @@ class Dashboard extends React.Component {
             <Card>
               <CardHeader color="info" stats icon>
                 <CardIcon color="info">
-                  <Accessibility />
+                  {/* <Accessibility /> */}
+                  {/* <Icon>looks_4</Icon>  */}
+                  <Icon>public</Icon> 
                 </CardIcon>
-                <p className={classes.cardCategory}>Followers</p>
-                <h3 className={classes.cardTitle}>+245</h3>
+                <p className={classes.cardCategory}>Singapore</p>
+                <h3 className={classes.cardTitle}>27 <small>Tasks</small></h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <Update />
-                  Just Updated
+                  {/* <Assessment /> */}
+                  {/* <a href="#pablo" onClick={e => e.preventDefault()}> */}
+                  <Button type="default" onClick={this.showModal4}>
+                  More Detail
+        </Button>
+        <Modal
+          title="Singapore"
+          width="70%"
+          visible={this.state.visible4}
+          onOk={this.handleOk4}
+          onCancel={this.handleCancel4}
+          footer={false}
+        >
+         <Dashboard3 />
+        </Modal>  
+                  {/* </a> */}
                 </div>
               </CardFooter>
             </Card>
           </GridItem>
-        </GridContainer> */}
+        </GridContainer>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={6}>
+          <GridItem xs={12} sm={12} md={4}>
             <Card chart>
               <CardHeader color="success">
                 <ChartistGraph
                   className="ct-chart"
-                  data={dailySalesChart.data}
-                  type="Line"
-                  options={dailySalesChart.options}
-                  listener={dailySalesChart.animation}
+                  data={dailySalesChart2.data}
+                //   type="Line"
+                type="Bar"
+                  options={dailySalesChart2.options}
+                  listener={dailySalesChart2.animation}
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>Monthly Issues</h4>
+                <h4 className={classes.cardTitle}>Classification</h4>
                 <p className={classes.cardCategory}>
                   <span className={classes.successText}>
                     {/* <ArrowUpward className={classes.upArrowCardCategory} /> 55% */}
@@ -190,21 +362,20 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={12} md={6}>
+          <GridItem xs={12} sm={12} md={4}>
             <Card chart>
               <CardHeader color="warning">
                 <ChartistGraph
                   className="ct-chart"
-                  data={emailsSubscriptionChart.data}
-                  // type="Bar"
-                  type="Line"
-                  options={emailsSubscriptionChart.options}
-                  responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-                  listener={emailsSubscriptionChart.animation}
+                  data={emailsSubscriptionChart2.data}
+                  type="Bar"
+                  options={emailsSubscriptionChart2.options}
+                  responsiveOptions={emailsSubscriptionChart2.responsiveOptions}
+                  listener={emailsSubscriptionChart2.animation}
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>Yearly Issues</h4>
+                <h4 className={classes.cardTitle}>Type</h4>
                 <p className={classes.cardCategory}>
                   {/* Last Campaign Performance */}
                 </p>
@@ -216,30 +387,31 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-          {/* <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={4}>
             <Card chart>
               <CardHeader color="danger">
                 <ChartistGraph
                   className="ct-chart"
-                  data={completedTasksChart.data}
-                  type="Line"
-                  options={completedTasksChart.options}
-                  listener={completedTasksChart.animation}
+                  data={completedTasksChart2.data}
+                //   type="Line"
+                type="Bar"
+                  options={completedTasksChart2.options}
+                  listener={completedTasksChart2.animation}
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>Completed Tasks</h4>
+                <h4 className={classes.cardTitle}>All Tasks Stat</h4>
                 <p className={classes.cardCategory}>
-                  Last Campaign Performance
+                  {/* Last Campaign Performance */}
                 </p>
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime /> campaign sent 2 days ago
+                <AccessTime /> updated 4 minutes ago
                 </div>
               </CardFooter>
             </Card>
-          </GridItem> */}
+          </GridItem>
         </GridContainer>
 
 {/* Copy Graph here */}
@@ -250,10 +422,10 @@ class Dashboard extends React.Component {
               <CardHeader color="success">
                 <ChartistGraph
                   className="ct-chart"
-                  data={dailySalesChart.data}
+                  data={dailySalesChart2.data}
                   type="Line"
-                  options={dailySalesChart.options}
-                  listener={dailySalesChart.animation}
+                  options={dailySalesChart2.options}
+                  listener={dailySalesChart2.animation}
                 />
               </CardHeader>
               <CardBody>
@@ -277,11 +449,11 @@ class Dashboard extends React.Component {
               <CardHeader color="warning">
                 <ChartistGraph
                   className="ct-chart"
-                  data={emailsSubscriptionChart.data}
+                  data={emailsSubscriptionChart2.data}
                   type="Bar"
-                  options={emailsSubscriptionChart.options}
-                  responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-                  listener={emailsSubscriptionChart.animation}
+                  options={emailsSubscriptionChart2.options}
+                  responsiveOptions={emailsSubscriptionChart2.responsiveOptions}
+                  listener={emailsSubscriptionChart2.animation}
                 />
               </CardHeader>
               <CardBody>
@@ -302,10 +474,10 @@ class Dashboard extends React.Component {
               <CardHeader color="danger">
                 <ChartistGraph
                   className="ct-chart"
-                  data={completedTasksChart.data}
+                  data={completedTasksChart2.data}
                   type="Line"
-                  options={completedTasksChart.options}
-                  listener={completedTasksChart.animation}
+                  options={completedTasksChart2.options}
+                  listener={completedTasksChart2.animation}
                 />
               </CardHeader>
               <CardBody>
@@ -321,8 +493,8 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-        </GridContainer> */}
-
+        </GridContainer>
+ */}
 
 
 {/* End of copy */}
@@ -379,12 +551,12 @@ class Dashboard extends React.Component {
               <CardBody>
                 <Table
                   tableHeaderColor="warning"
-                  tableHead={["ID", "Name", "Status", "UniqueID"]}
+                  tableHead={["ID", "Name", "Salary", "Country"]}
                   tableData={[
-                    ["1", "Dakota Rice", "Working", "Engineer1"],
-                    ["2", "Minerva Hooper", "Holiday", "Engineer2"],
-                    ["3", "Sage Rodriguez", "Working", "Engineer3"],
-                    ["4", "Philip Chaney", "Working", "Engineer4"]
+                    ["1", "Dakota Rice", "$36,738", "Niger"],
+                    ["2", "Minerva Hooper", "$23,789", "Curaçao"],
+                    ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
+                    ["4", "Philip Chaney", "$38,735", "Korea, South"]
                   ]}
                 />
               </CardBody>
@@ -396,8 +568,8 @@ class Dashboard extends React.Component {
   }
 }
 
-Dashboard.propTypes = {
+Dashboard2.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(dashboardStyle)(Dashboard);
+export default withStyles(dashboardStyle)(Dashboard2);

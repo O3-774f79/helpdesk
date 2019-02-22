@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 
 import Build from "@material-ui/icons/Build";
 // import Equalizer from "@material-ui/icons/Equalizer";
-import Settings from "@material-ui/icons/Settings";
+// import Settings from "@material-ui/icons/Settings";
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,

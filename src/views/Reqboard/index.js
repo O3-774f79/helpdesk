@@ -2,13 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
-import Paper from '@material-ui/core/Paper';
+// import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 import Divider from '@material-ui/core/Divider';
 
 import Topmenu from './Topmenu';
 import Manageboard from './Manageboard';
+
+
+import Card from "components/Card/Card.jsx";
+import CardHeader from "components/Card/CardHeader.jsx";
+import CardBody from "components/Card/CardBody.jsx";
+// import CardFooter from "components/Card/CardFooter.jsx";
+
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
@@ -25,6 +32,22 @@ const styles = theme => ({
   divider: {
     margin: `${theme.spacing.unit * 2}px 0`,
   },
+  cardCategoryWhite: {
+    color: "rgba(255,255,255,.62)",
+    margin: "0",
+    fontSize: "14px",
+    marginTop: "0",
+    marginBottom: "0"
+  },
+  cardTitleWhite: {
+    color: "#FFFFFF",
+    marginTop: "0px",
+    minHeight: "auto",
+    fontWeight: "300",
+    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+    marginBottom: "3px",
+    textDecoration: "none"
+  }
   
 });
 
@@ -36,20 +59,29 @@ class Reqboard extends React.Component {
 
   return (
     <div>
-       <Paper className={classes.paper}>
+       {/* <Paper className={classes.paper}> */}
         <Grid xs={12}>
-        
+        <Card>
+        <CardHeader color="primary" >
+              <h5 className={classes.cardTitleWhite}>Admin Inbox</h5>
+              <p className={classes.cardCategoryWhite}></p>
+            </CardHeader>
+            <CardBody>
        <Topmenu />
+       </CardBody>
+       </Card>
        </Grid>
        <Grid xs={12}>
       
        <Divider className={classes.divider} /> 
-   <Paper className={classes.paper}>
+   {/* <Paper className={classes.paper}> */}
+   <Card>
     <Manageboard />
-    </Paper>
+    {/* </Paper> */}
+    </Card>
     </Grid>
     
-    </Paper>
+    {/* </Paper> */}
     {/* {/* <Review /> */}
     </div>
   );

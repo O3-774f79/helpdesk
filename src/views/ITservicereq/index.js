@@ -3,7 +3,7 @@ import React,{ PureComponent } from "react";
 import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
-import { Paper } from "@material-ui/core";
+// import { Paper } from "@material-ui/core";
 
 // import Divider from '@material-ui/core/Divider';
 
@@ -11,6 +11,8 @@ import { Paper } from "@material-ui/core";
 // import Topmenu1 from "./Topmenu1";
 import Tasklist1 from "./Tasklist1";
 // import ITformReq1 from "./ITformReq1";
+
+
 
 const styles = theme => ({
      button: {
@@ -36,10 +38,10 @@ class index extends PureComponent {
 
      render(){
           
-    const { classes } = this.props;
+    // const { classes } = this.props;
           return(
                <div>
-                       <Paper className={classes.paper}>
+                       {/* <Paper className={classes.paper}> */}
         {/* <Grid xs={12}>
         <Topmenu1 />
        
@@ -53,7 +55,7 @@ class index extends PureComponent {
                       <Tasklist1 />
                      
                      {/* </Grid> */}
-                    </Paper>
+                    {/* </Paper> */}
                     {/* <ITformReq1 /> */}
                </div>
           )

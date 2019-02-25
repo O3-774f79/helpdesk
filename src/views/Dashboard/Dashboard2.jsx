@@ -56,17 +56,46 @@ import Dashboard3 from "./Dashboard3";
 //   },
 // }
 // )
+// function ChangeNation({text,state}){
+//   switch(state){
+//     case 'thailand':
+//       return <Dashboard3 text={text}/>;
+//     case 'malaysia':
+//       return <Dashboard3 text={text}/>;
+//     case 'indonisia':
+//       return <Dashboard3 text={text}/>;
+//     case 'singapore':
+//       return <Dashboard3 text={text}/>;
+//       default:
+//       return null;
+//   }
+// }
 
+// Notification.propTypes = {
+//    text: React.PropTypes.string,
+//    state: React.PropTypes.oneOf(['thailand', 'malaysia', 'indonisia', 'singapore'])
+// }
 
 
 class Dashboard2 extends React.Component {
   state = {
+    midhead: "Thailand",
     value: 0,
     visible1: false,
     visible2: false,
     visible3: false,
     visible4: false,
   };
+  // 
+
+  changehead = (a) => {
+    console.log(a);
+    this.setState({
+      midhead: a
+    });
+    // alert(a)
+  };
+  // 
   handleChange = (event, value) => {
     this.setState({ value });
   };
@@ -94,71 +123,71 @@ class Dashboard2 extends React.Component {
       visible1: false,
     });
   }
-///---2
- 
-showModal2 = () => {
-  this.setState({
-    visible2: true,
-  });
-}
+  ///---2
 
-handleOk2 = (e) => {
-  console.log(e);
-  this.setState({
-    visible2: false,
-  });
-}
+  showModal2 = () => {
+    this.setState({
+      visible2: true,
+    });
+  }
 
-handleCancel2 = (e) => {
-  console.log(e);
-  this.setState({
-    visible2: false,
-  });
-}
+  handleOk2 = (e) => {
+    console.log(e);
+    this.setState({
+      visible2: false,
+    });
+  }
 
- ///---3
-showModal3 = () => {
-  this.setState({
-    visible3: true,
-  });
-}
+  handleCancel2 = (e) => {
+    console.log(e);
+    this.setState({
+      visible2: false,
+    });
+  }
 
-handleOk3 = (e) => {
-  console.log(e);
-  this.setState({
-    visible3: false,
-  });
-}
+  ///---3
+  showModal3 = () => {
+    this.setState({
+      visible3: true,
+    });
+  }
 
-handleCancel3 = (e) => {
-  console.log(e);
-  this.setState({
-    visible3: false,
-  });
-}
-///---4
- 
-showModal4 = () => {
-  this.setState({
-    visible4: true,
-  });
-}
+  handleOk3 = (e) => {
+    console.log(e);
+    this.setState({
+      visible3: false,
+    });
+  }
 
-handleOk4 = (e) => {
-  console.log(e);
-  this.setState({
-    visible4: false,
-  });
-}
+  handleCancel3 = (e) => {
+    console.log(e);
+    this.setState({
+      visible3: false,
+    });
+  }
+  ///---4
 
-handleCancel4 = (e) => {
-  console.log(e);
-  this.setState({
-    visible4: false,
-  });
-}
+  showModal4 = () => {
+    this.setState({
+      visible4: true,
+    });
+  }
 
-  
+  handleOk4 = (e) => {
+    console.log(e);
+    this.setState({
+      visible4: false,
+    });
+  }
+
+  handleCancel4 = (e) => {
+    console.log(e);
+    this.setState({
+      visible4: false,
+    });
+  }
+
+
   render() {
     const { classes } = this.props;
     return (
@@ -180,10 +209,10 @@ handleCancel4 = (e) => {
                 <h4 className={classes.cardTitle}>Monthly Task</h4>
                 <p className={classes.cardCategory}>
                   <span className={classes.successText}> */}
-                    {/* <ArrowUpward className={classes.upArrowCardCategory} /> 55% */}
-                  {/* </span>{" "} */}
-                  {/* increase in today sales. */}
-                {/* </p>
+        {/* <ArrowUpward className={classes.upArrowCardCategory} /> 55% */}
+        {/* </span>{" "} */}
+        {/* increase in today sales. */}
+        {/* </p>
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
@@ -193,7 +222,7 @@ handleCancel4 = (e) => {
             </Card>
           </GridItem>
           </GridContainer> */}
-          
+
 
         <GridContainer>
           <GridItem xs={12} sm={6} md={3}>
@@ -202,7 +231,7 @@ handleCancel4 = (e) => {
                 <CardIcon color="warning">
                   {/* <Icon>content_copy</Icon> */}
                   {/* <Icon>looks_one</Icon>  */}
-                  <Icon>public</Icon> 
+                  <Icon>public</Icon>
                 </CardIcon>
                 <p className={classes.cardCategory}>Thailand</p>
                 <h3 className={classes.cardTitle}>
@@ -215,19 +244,20 @@ handleCancel4 = (e) => {
                     <Warning />
                   </Assessment> */}
                   {/* <a href="#pablo" onClick={e => e.preventDefault()}> */}
-                  <Button type="default" onClick={this.showModal1}>
-                  More Detail
+                  {/* <Button type="default" onClick={this.showModal1} > */}
+                  <Button type="default" onClick={() => this.changehead("Thailand")} >
+                    More Detail
         </Button>
-        <Modal
-          title="Thailand"
-          width="70%"
-          visible={this.state.visible1}
-          onOk={this.handleOk1}
-          onCancel={this.handleCancel1}
-          footer={false}
-        >
-         <Dashboard3 />
-        </Modal>  
+                  <Modal
+                    title="Thailand"
+                    width="70%"
+                    visible={this.state.visible1}
+                    onOk={this.handleOk1}
+                    onCancel={this.handleCancel1}
+                    footer={false}
+                  >
+                    <Dashboard3 />
+                  </Modal>
                   {/* </a> */}
                 </div>
               </CardFooter>
@@ -239,7 +269,7 @@ handleCancel4 = (e) => {
                 <CardIcon color="success">
                   {/* <Store /> */}
                   {/* <Icon>looks_two</Icon> */}
-                  <Icon>public</Icon> 
+                  <Icon>public</Icon>
                 </CardIcon>
                 <p className={classes.cardCategory}>Malaysia</p>
                 <h3 className={classes.cardTitle}>49 <small>Tasks</small></h3>
@@ -248,19 +278,20 @@ handleCancel4 = (e) => {
                 <div className={classes.stats}>
                   {/* <Assessment /> */}
                   {/* <a href="#pablo" onClick={e => e.preventDefault()}> */}
-                  <Button type="default" onClick={this.showModal2}>
-                  More Detail
+                  {/* <Button type="default" onClick={this.showModal2}> */}
+                  <Button type="default" onClick={() => this.changehead("Malaysia")} >
+                    More Detail
         </Button>
-        <Modal
-          title="Malaysia"
-          width="70%"
-          visible={this.state.visible2}
-          onOk={this.handleOk2}
-          onCancel={this.handleCancel2}
-          footer={false}
-        >
-         <Dashboard3 />
-        </Modal>  
+                  <Modal
+                    title="Malaysia"
+                    width="70%"
+                    visible={this.state.visible2}
+                    onOk={this.handleOk2}
+                    onCancel={this.handleCancel2}
+                    footer={false}
+                  >
+                    <Dashboard3 />
+                  </Modal>
                   {/* </a> */}
                 </div>
               </CardFooter>
@@ -272,7 +303,7 @@ handleCancel4 = (e) => {
                 <CardIcon color="danger">
                   {/* <Icon>info_outline</Icon> */}
                   {/* <Icon>looks_3</Icon>  */}
-                  <Icon>public</Icon> 
+                  <Icon>public</Icon>
                 </CardIcon>
                 <p className={classes.cardCategory}>Indonisia</p>
                 <h3 className={classes.cardTitle}>75 <small>Tasks</small></h3>
@@ -281,19 +312,20 @@ handleCancel4 = (e) => {
                 <div className={classes.stats}>
                   {/* <Assessment /> */}
                   {/* <a href="#pablo" onClick={e => e.preventDefault()}> */}
-                  <Button type="default" onClick={this.showModal3}>
-                  More Detail
+                  {/* <Button type="default" onClick={this.showModal3}> */}
+                  <Button type="default" onClick={() => this.changehead("Indonisia")} >
+                    More Detail
         </Button>
-        <Modal
-          title="Indonisia"
-          width="70%"
-          visible={this.state.visible3}
-          onOk={this.handleOk3}
-          onCancel={this.handleCancel3}
-          footer={false}
-        >
-         <Dashboard3 />
-        </Modal>  
+                  <Modal
+                    title="Indonisia"
+                    width="70%"
+                    visible={this.state.visible3}
+                    onOk={this.handleOk3}
+                    onCancel={this.handleCancel3}
+                    footer={false}
+                  >
+                    <Dashboard3 />
+                  </Modal>
                   {/* </a> */}
                 </div>
               </CardFooter>
@@ -305,7 +337,7 @@ handleCancel4 = (e) => {
                 <CardIcon color="info">
                   {/* <Accessibility /> */}
                   {/* <Icon>looks_4</Icon>  */}
-                  <Icon>public</Icon> 
+                  <Icon>public</Icon>
                 </CardIcon>
                 <p className={classes.cardCategory}>Singapore</p>
                 <h3 className={classes.cardTitle}>27 <small>Tasks</small></h3>
@@ -314,25 +346,49 @@ handleCancel4 = (e) => {
                 <div className={classes.stats}>
                   {/* <Assessment /> */}
                   {/* <a href="#pablo" onClick={e => e.preventDefault()}> */}
-                  <Button type="default" onClick={this.showModal4}>
-                  More Detail
+                  {/* <Button type="default" onClick={this.showModal4}> */}
+                  <Button type="default" onClick={() => this.changehead("Singapore")} >
+                    More Detail
         </Button>
-        <Modal
-          title="Singapore"
-          width="70%"
-          visible={this.state.visible4}
-          onOk={this.handleOk4}
-          onCancel={this.handleCancel4}
-          footer={false}
-        >
-         <Dashboard3 />
-        </Modal>  
+                  <Modal
+                    title="Singapore"
+                    width="70%"
+                    visible={this.state.visible4}
+                    onOk={this.handleOk4}
+                    onCancel={this.handleCancel4}
+                    footer={false}
+                  >
+                    <Dashboard3 />
+                  </Modal>
                   {/* </a> */}
                 </div>
               </CardFooter>
             </Card>
           </GridItem>
         </GridContainer>
+
+        {/* ------------------------------------------------------------------------------- */}
+
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={12} >
+            <Card >
+              <CardHeader>
+                {this.state.midhead}
+
+              </CardHeader>
+              <CardBody >
+                <Dashboard3 />
+              </CardBody>
+            </Card>
+
+            {/* <ChangeNation /> */}
+          </GridItem>
+        </GridContainer>
+        {/* ------------------------------------------------------------------------------- */}
+
+
+
+
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
             <Card chart>
@@ -340,8 +396,8 @@ handleCancel4 = (e) => {
                 <ChartistGraph
                   className="ct-chart"
                   data={dailySalesChart2.data}
-                //   type="Line"
-                type="Bar"
+                  //   type="Line"
+                  type="Bar"
                   options={dailySalesChart2.options}
                   listener={dailySalesChart2.animation}
                 />
@@ -374,6 +430,7 @@ handleCancel4 = (e) => {
                   listener={emailsSubscriptionChart2.animation}
                 />
               </CardHeader>
+
               <CardBody>
                 <h4 className={classes.cardTitle}>Type</h4>
                 <p className={classes.cardCategory}>
@@ -382,7 +439,7 @@ handleCancel4 = (e) => {
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                <AccessTime /> updated 4 minutes ago
+                  <AccessTime /> updated 4 minutes ago
                 </div>
               </CardFooter>
             </Card>
@@ -393,8 +450,8 @@ handleCancel4 = (e) => {
                 <ChartistGraph
                   className="ct-chart"
                   data={completedTasksChart2.data}
-                //   type="Line"
-                type="Bar"
+                  //   type="Line"
+                  type="Bar"
                   options={completedTasksChart2.options}
                   listener={completedTasksChart2.animation}
                 />
@@ -407,15 +464,15 @@ handleCancel4 = (e) => {
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                <AccessTime /> updated 4 minutes ago
+                  <AccessTime /> updated 4 minutes ago
                 </div>
               </CardFooter>
             </Card>
           </GridItem>
         </GridContainer>
 
-{/* Copy Graph here */}
-{/* 
+        {/* Copy Graph here */}
+        {/* 
 <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
             <Card chart>
@@ -497,7 +554,7 @@ handleCancel4 = (e) => {
  */}
 
 
-{/* End of copy */}
+        {/* End of copy */}
         {/* <GridContainer>
           <GridItem xs={12} sm={12} md={6}>
             <CustomTabs
